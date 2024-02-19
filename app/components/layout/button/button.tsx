@@ -3,17 +3,18 @@ interface DefaultButtonProps {
     type?: "submit" | "reset" | "button",
     children: React.ReactNode,
     onClick?: () => void,
+    wide?: "sm" | "lg" | "md"
 }
 
-export default function DefaultButton({children, variant, onClick, type}: DefaultButtonProps) {
+export default function DefaultButton({children, variant, onClick, type, wide}: DefaultButtonProps) {
     return (
         <button type={type} onClick={onClick} className={`
-        ${variant == "default" ? "rounded-full -ml-1 p-1 text-red-300 hover:text-red-400 active:bg-zinc-100" : ""}
-        ${variant == "icon_green" ? "rounded-full p-1 bg-green-400 text-white active:bg-green-300 hover:bg-green-500" : ""}
-        ${variant == "icon_red" ? "rounded-full p-1 bg-red-400 text-white active:bg-red-300 hover:bg-red-500" : ""}
-        ${variant == "alert" ? "text-yellow-500" : ""}
-        ${variant == "submit" ? "w-full text-white bg-green-400 text-base rounded-sm" : ""}
-        ${variant == "cancel" ? "w-full text-white bg-red-400 text-base rounded-sm" : ""}
+        text-center rounded-sm transition-all
+        ${wide == "sm" ? "px-1 h-8 text-xs" : ""}
+        ${wide == "md" ? "px-2 h-9 text-sm" : ""}
+        ${wide == "lg" ? "px-3 h-18 text-md" : ""}
+        ${variant == "default" ? " text-red-300 hover:text-red-400 active:text-red-300" : ""}
+        ${variant == "submit" ? "bg-blue text-white active:scale-95" : ""}
         `}>
             {children}
         </button>

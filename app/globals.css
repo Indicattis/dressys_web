@@ -17,7 +17,7 @@
 body {
     min-height: 100vh;
     background-repeat: no-repeat;
-    background: linear-gradient(#ffffff, #e0e0e0);
+    background: white;
   }
 @media (prefers-color-scheme: dark) {
   :root {

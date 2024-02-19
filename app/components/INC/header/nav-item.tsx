@@ -11,7 +11,7 @@ interface ItemProps {
 export default function NavItem({icon, title}: ItemProps) {
     const [hover, isHovered] = useState<boolean>(false)
     return (
-        <div className={`hover:text-red-300 cursor-pointer transition-all w-10 text-center relative flex justify-center`}
+        <div className={`hover:text-pink text-zinc-500 cursor-pointer transition-all w-10 text-center relative flex justify-center`}
         onMouseOver={() => isHovered(true)}
         onMouseLeave={() => isHovered(false)}
         >
