@@ -15,11 +15,15 @@ const config: Config = {
       },
       colors: {
         blue: "#4F7D95",
-        pink: "#FCA5A5"
+        pink: "#FCA5A5",
+        dark: "#274D68",
+        gray: "#676f7d",
+        white: "#ffffff",
+        gold: "#F5B17A"
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
-        custom: ['wildword', 'sans-serif'],
+        'wildword': ['wildword', 'sans-serif'],
         'newake': ['newake', 'sans-serif'],
         'hunters': ['hunters', 'sans-serif'],
       },

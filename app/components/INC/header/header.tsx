@@ -1,3 +1,5 @@
+'use client'
+
 import {
     IconAddressBook,
     IconButterfly,
@@ -7,16 +9,14 @@ import {
 } from "@tabler/icons-react";
 import NavItem from "./nav-item";
 import DefaultButton from "../../layout/button/button";
+import { useUserToken } from "@/data/hooks/useSession";
+import LogoComponent from "./logo";
 
 export default function Header() {
+    const {UserLoged, UserName} = useUserToken();
     return (
         <header className=" flex p-1 items-center justify-between w-full">
-            <div className="relative">
-                <h1 className={`font-hunters text-5xl text-blue`}>Dressys</h1>
-                <div className="font-poppins text-xs absolute text-pink top-0 right-0">
-                    Moda
-                </div>
-            </div>
+            <LogoComponent></LogoComponent>
             <nav className="flex justify-center items-center gap-10 font-poppins">
                 <NavItem icon={<IconHome2 />} title="Home" />
                 <NavItem icon={<IconButterfly />} title="Serviços" />
@@ -24,16 +24,21 @@ export default function Header() {
             </nav>
             <div className="flex gap-2">
                 <div>
-                    <DefaultButton wide="md" variant="submit">
-                        Login
-                    </DefaultButton>
-                </div>
-                <div className="p-1 text-zinc-500 border rounded-full cursor-pointer hover:text-pink hover:border-red-100 transition-all">
+                {UserLoged ? (
+                    
+                    <DefaultButton wide="sm" variant="pink" rounded="full">
                     <IconUser />
+                    </DefaultButton>
+                
+                ) : (
+                    <DefaultButton wide="sm" variant="pink">
+                    Login
+                    </DefaultButton>
+                )}
                 </div>
-                <div className="p-1 text-zinc-500  rounded-sm cursor-pointer hover:text-pink hover:border-red-100 transition-all">
+                <DefaultButton wide="sm" variant="default" rounded="full">
                     <IconMenuDeep />
-                </div>
+                </DefaultButton>
             </div>
         </header>
     );

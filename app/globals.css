@@ -36,3 +36,45 @@ body {
 .shadow {
     background: linear-gradient(#000, #ffffff00);
 }
+
+._input {
+  /* border-left: 3px solid #4F7D95; */
+  padding: 0.75rem;
+  width: 100%;
+  /* background-color: #f1f1f1; */
+  outline: none;
+  transition: all .2s;
+  box-shadow: 0 1px 4px 0 #e4e4e4;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: #1c1b1fb4;
+}
+._input::placeholder {
+  color: #4f7c958a;
+}
+._input:focus {
+  transition: all .2s;
+  box-shadow: 0 1px 10px 0 #bdbdbd;
+}
+
+._input_icon {
+  position: absolute;
+  color: #4F7D95;
+  right: 0;
+  top: 0;
+  padding: 0.50rem;
+}
+
+._input_icon_2 {
+  position: absolute;
+  color: #FCA5A5;
+  right: 0;
+  top: 0;
+  padding: 0.50rem;
+}
+
+._input_wide {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+}
