@@ -13,7 +13,7 @@ import LogoComponent from "@/app/components/INC/header/logo";
 export default function AccessComponent() {
     const [model, setModel] = useState<number>(1)
     return (
-        <section className="flex flex-col items-center gap-3  ">
+        <section className="flex flex-col items-center gap-3  w-full">
             
             <div className="font-bold text-sm tracking-wider relative flex justify-center items-center rounded-lg h-14 w-56 overflow-hidden bg-zinc-100">
                 <div className={`${model == 1 ? "text-white": "text-gray"} z-20 w-full h-14 flex items-center justify-center cursor-pointer text-center`} onClick={() => setModel(1)}>Entrar</div>

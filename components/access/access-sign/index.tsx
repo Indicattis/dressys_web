@@ -2,7 +2,7 @@ import {
     IconCalendarMonth,
     IconCheck,
     IconDoorEnter,
-    IconDots,
+    IconLockX,
     IconMan,
     IconPassword,
     IconPhone,
@@ -29,6 +29,7 @@ import {
     handlePhoneChange,
 } from "@/utils/formatter";
 import ProgressBarDefault from "@/layout/progressbar_levels";
+import { IconLockCheck } from "@tabler/icons-react";
 
 export default function AccessSignComponent() {
     const { register, handleSubmit } = useForm<ClientDTO>();
@@ -217,20 +218,28 @@ export default function AccessSignComponent() {
                 </div>
             </motion.div>
             <motion.div
-                className={`_input_wide flex`}
+                className={`_input_wide flex w-full`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 1.1 }}
             >
-                <ProgressBarDefault
-                    color={passErrorMessage}
-                ></ProgressBarDefault>
+                <div className="w-full max-w-1/3">
+                <ProgressBarDefault color={passErrorMessage}></ProgressBarDefault>
+
+                </div>
+                <div className="w-full max-w-1/3 flex items-end justify-center">
+                    {passErrorMessage == 5 ? (
+                        <IconLockCheck color="rgb(34, 197, 94)"></IconLockCheck>
+                    ) : (
+                        <IconLockX color="rgb(254, 240, 244)"></IconLockX>
+                    )}
+                </div>
                 {passErrorMessage != 0 ? (
                     <div
-                        className={`flex flex-col justify-end items-center w-full
+                        className={`flex flex-col justify-end items-center w-full max-w-1/3 text-nowrap
                 ${passErrorMessage === 3 && "text-green-500"}
-                ${passErrorMessage === 2 && "text-yellow-500"}
+                ${passErrorMessage === 2 && "text-yellow-400"}
                 ${passErrorMessage === 1 && "text-red-500"}
                 ${passErrorMessage === 4 && "text-red-500"}
                 ${passErrorMessage === 5 && "text-green-500"}

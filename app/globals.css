@@ -44,13 +44,13 @@ body {
   /* background-color: #f1f1f1; */
   outline: none;
   transition: all .2s;
-  box-shadow: 0 1px 4px 0 #e4e4e4;
+  box-shadow: 0 1px 5px 0 #e4e4e4;
   border-radius: 0.25rem;
   font-size: 0.75rem;
   color: #1c1b1fb4;
 }
 ._input::placeholder {
-  color: #4f7c958a;
+  color: #4f7c95a2;
 }
 ._input:focus {
   transition: all .2s;

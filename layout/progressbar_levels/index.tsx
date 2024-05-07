@@ -36,8 +36,8 @@ export default function ProgressBarDefault({color}: ProgressBarProps) {
         return (
             <div className="w-full h-10 relative flex gap-1">
             
-            <span className="w-1/3 "> <IconLetterI  color="rgb(234, 179, 8"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(234, 179, 8"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI  color="rgb(250, 204, 21"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="rgb(250, 204, 21"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
             <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
         </div>
         )
