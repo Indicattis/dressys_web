@@ -39,7 +39,7 @@ export default function AccessSignComponent() {
     const [password, setPassword] = useState("");
     const [mailErrorMessage, setMailErrorMessage] = useState("");
     const [passErrorMessage, setPassErrorMessage] = useState(0);
-    const [genre, setGenre] = useState(0);
+    // const [genre, setGenre] = useState(0);
 
     const onSubmit = async (data: ClientDTO) => {
         data.client_birthday = convertToISOString(birth);
@@ -117,7 +117,7 @@ export default function AccessSignComponent() {
                     {mailErrorMessage}
                 </div>
             )}
-            <motion.div
+            {/* <motion.div
                 className={" flex gap-3 justify-center items-center w-full"}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -176,7 +176,7 @@ export default function AccessSignComponent() {
                     value={`O`}
                     {...register("client_genre", {})}
                 />
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
                 className={`_input_wide`}
@@ -224,18 +224,18 @@ export default function AccessSignComponent() {
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 1.1 }}
             >
-                <div className="w-full max-w-1/3">
+                <div className="w-full">
                 <ProgressBarDefault color={passErrorMessage}></ProgressBarDefault>
 
                 </div>
-                <div className="w-full max-w-1/3 flex items-end justify-center">
+                <div className=" flex items-end justify-center">
                     {passErrorMessage == 5 ? (
                         <IconLockCheck color="rgb(34, 197, 94)"></IconLockCheck>
                     ) : (
                         <IconLockX color="rgb(254, 240, 244)"></IconLockX>
                     )}
                 </div>
-                {passErrorMessage != 0 ? (
+                {/* {passErrorMessage != 0 ? (
                     <div
                         className={`flex flex-col justify-end items-center w-full max-w-1/3 text-nowrap
                 ${passErrorMessage === 3 && "text-green-500"}
@@ -250,7 +250,7 @@ export default function AccessSignComponent() {
                     </div>
                 ) : (
                     ""
-                )}
+                )} */}
             </motion.div>
             <motion.div
                 className={`_input_wide`}
