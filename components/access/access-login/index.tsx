@@ -7,6 +7,7 @@ import { client_login } from "@/data/contexts/client";
 import { useUserToken } from "@/data/hooks/useSession";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TooltipComponent from "@/layout/tooltip";
 
 export default function AccessLoginComponent() {
     const {UserLoged, UserName} = useUserToken();
@@ -46,9 +47,9 @@ export default function AccessLoginComponent() {
                 {...register("client_mail", {
                     required: "Este campo é obrigatório",
                 })}/>
-                <div className={`_input_icon`}>
+                <TooltipComponent description="Digite o E-mail cadastrado"  className={`_input_icon`}>
                     <IconUser></IconUser>
-                </div>
+                </TooltipComponent>
             </motion.div>
 
             <motion.div
@@ -65,9 +66,9 @@ export default function AccessLoginComponent() {
                 {...register("client_password", {
                     required: "Este campo é obrigatório",
                 })}/>
-                <div className={`_input_icon`}>
+                <TooltipComponent description="Digite a sua Senha"  className={`_input_icon`}>
                     <IconPassword></IconPassword>
-                </div>
+                </TooltipComponent>
             </motion.div>
             <motion.div 
                 initial={{ opacity: 0, scale: 0 }}

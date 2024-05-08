@@ -30,6 +30,7 @@ import {
 } from "@/utils/formatter";
 import ProgressBarDefault from "@/layout/progressbar_levels";
 import { IconLockCheck } from "@tabler/icons-react";
+import TooltipComponent from "@/layout/tooltip";
 
 export default function AccessSignComponent() {
     const { register, handleSubmit } = useForm<ClientDTO>();
@@ -79,9 +80,9 @@ export default function AccessSignComponent() {
                         required: "Este campo é obrigatório",
                     })}
                 />
-                <div className={`_input_icon_2`}>
+                <TooltipComponent description="Nome Completo (obrigatório)" className={`_input_icon_2`}>
                     <IconWriting></IconWriting>
-                </div>
+                </TooltipComponent>
             </motion.div>
             <motion.div
                 className={`_input_wide`}
@@ -104,9 +105,9 @@ export default function AccessSignComponent() {
                             : "focus:text-green-500"
                     }`}
                 />
-                <div className={`_input_icon_2`}>
+                <TooltipComponent description="E-mail (obrigatório)" className={`_input_icon_2`}>
                     <IconUser></IconUser>
-                </div>
+                </TooltipComponent>
             </motion.div>
             {mailErrorMessage && (
                 <div
@@ -183,7 +184,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.5 }}
             >
                 <input
                     onChange={(event) => handlePhoneChange(event, setPhone)}
@@ -193,9 +194,9 @@ export default function AccessSignComponent() {
                     required
                     className={`_input`}
                 />
-                <div className={`_input_icon_2`}>
+                <TooltipComponent description="Celular / Whatsapp (obrigatório)" className={`_input_icon_2`}>
                     <IconPhone></IconPhone>
-                </div>
+                </TooltipComponent>
             </motion.div>
 
             <motion.div
@@ -203,7 +204,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.9 }}
+                transition={{ delay: 0.7 }}
             >
                 <input
                     onChange={(event) => handleDateChange(event, setBirth)}
@@ -213,16 +214,16 @@ export default function AccessSignComponent() {
                     className={`_input`}
                     value={birth}
                 />
-                <div className={`_input_icon_2`}>
+                <TooltipComponent description="Aniversário (obrigatório)" className={`_input_icon_2`}>
                     <IconCalendarMonth></IconCalendarMonth>
-                </div>
+                </TooltipComponent>
             </motion.div>
             <motion.div
                 className={`_input_wide flex w-full`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.1 }}
+                transition={{ delay: .9 }}
             >
                 <div className="w-full">
                 <ProgressBarDefault color={passErrorMessage}></ProgressBarDefault>
@@ -257,7 +258,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.3 }}
+                transition={{ delay: 1.1 }}
             >
                 <input
                     onChange={(event) =>
@@ -273,16 +274,16 @@ export default function AccessSignComponent() {
                     required
                     className={`_input`}
                 />
-                <div className={`_input_icon_2`}>
+                <TooltipComponent description="Senha (obrigatório)" className={`_input_icon_2`}>
                     <IconPassword></IconPassword>
-                </div>
+                </TooltipComponent>
             </motion.div>
             <motion.div
                 className={`_input_wide`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.5 }}
+                transition={{ delay: 1.3 }}
             >
                 <input
                     onChange={(event) =>
@@ -297,16 +298,16 @@ export default function AccessSignComponent() {
                     className={`_input`}
                     required
                 />
-                <div className={`_input_icon_2`}>
+                <TooltipComponent description="Confirmação de Senha (obrigatório)" className={`_input_icon_2`}>
                     <IconPassword></IconPassword>
-                </div>
+                </TooltipComponent>
             </motion.div>
 
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.7 }}
+                transition={{ delay: 1.5 }}
                 className="w-full"
             >
                 <DefaultButton
