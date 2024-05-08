@@ -1,24 +1,24 @@
-import { IconDoorEnter, IconPassword, IconUser, } from "@tabler/icons-react";
-import DefaultButton from "@/app/components/layout/button/button";
+import { IconDoorEnter, IconPassword, IconSquare, IconSquareCheck, IconUser, } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ClientDTO from "@/data/types/client";
 import { client_login } from "@/data/contexts/client";
-import { useUserToken } from "@/data/hooks/useSession";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TooltipComponent from "@/layout/tooltip";
+import { useState } from "react";
+import DefaultButton from "@/layout/button/button";
 
 export default function AccessLoginComponent() {
-    const {UserLoged, UserName} = useUserToken();
     const { register, handleSubmit } = useForm<ClientDTO>();
+    const [isLocal, setLocal] = useState<boolean>(false)
 
     const onSubmit = async (data: ClientDTO) => {
         try {
-            const response = await client_login(data);
+            const response = await client_login(data, isLocal);
 
             if (response.authenticated) {
-                toast.info("Seja bem vinda a melhor e mais linda amiga do João Pedro! "+UserName)
+                toast.info("Seja bem vinda a melhor e mais linda amiga do João Pedro! ")
             } else {
                 toast.error("Usuário ou senha incorretos!")
             }
@@ -76,8 +76,13 @@ export default function AccessLoginComponent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.5 }}className="flex gap-1">
-                <input type="checkbox" name="" id="session-check"/>
-                <label className="text-gray text-sm font-mono" htmlFor="session-check">Manter-me conectado</label>
+                <input type="checkbox" name="" id="session-check" className="hidden" checked={isLocal}/>
+                <div className="flex gap-2 items-center justify-center text-gray text-sm font-mono cursor-pointer" onClick={() => setLocal(!isLocal)}>
+                    {!isLocal ? <IconSquare width={20} height={20}/> : <IconSquareCheck width={20} height={20}/>}
+                    <label className="" htmlFor="session-check"
+                    >Manter-me conectado</label>
+                </div>
+                
             </motion.div>
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}

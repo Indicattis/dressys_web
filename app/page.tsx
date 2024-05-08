@@ -1,6 +1,6 @@
 
 import AccessComponent from "@/components/access";
-import Header from "./components/INC/header/header";
+import Header from "@/components/inc/header";
 
 export default function Home() {
   return (

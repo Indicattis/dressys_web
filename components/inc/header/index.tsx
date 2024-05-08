@@ -7,10 +7,10 @@ import {
     IconMenuDeep,
     IconUser,
 } from "@tabler/icons-react";
-import NavItem from "./nav-item";
-import DefaultButton from "../../layout/button/button";
 import { useUserToken } from "@/data/hooks/useSession";
 import LogoComponent from "./logo";
+import DefaultButton from "@/layout/button/button";
+import NavItem from "./header-item";
 
 export default function Header() {
     const {UserLoged, UserName} = useUserToken();

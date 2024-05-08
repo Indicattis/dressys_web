@@ -3,13 +3,16 @@
 import { jwtDecode  } from "jwt-decode";
 
 export const getToken = (): string | null => {
-  if (typeof window !== "undefined") {
-    const token = sessionStorage.getItem("token");
-    return token || null;
-  }
-  return null;
-};
-
+    if (typeof window !== "undefined") {
+      let token = sessionStorage.getItem("token");
+      if (!token) {
+        token = localStorage.getItem("token");
+      }
+      return token || null;
+    }
+    return null;
+  };
+  
 export const getTokenInfo = (): { id: any; name: any; mail: any, number: any } | null => {
   const token = getToken();
   if (token) {

@@ -11,7 +11,6 @@ import {
     IconWoman,
     IconWriting,
 } from "@tabler/icons-react";
-import DefaultButton from "@/app/components/layout/button/button";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ClientDTO from "@/data/types/client";
@@ -31,6 +30,7 @@ import {
 import ProgressBarDefault from "@/layout/progressbar_levels";
 import { IconLockCheck } from "@tabler/icons-react";
 import TooltipComponent from "@/layout/tooltip";
+import DefaultButton from "@/layout/button/button";
 
 export default function AccessSignComponent() {
     const { register, handleSubmit } = useForm<ClientDTO>();

@@ -17,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-poppins`}>{children}</body>
+        <ToastContainer
+        draggable 
+        position="top-center"
+        closeOnClick
+        hideProgressBar
+        theme="colored"/>
+        <body className={`font-poppins`}>{children}</body>
     </html>
   );
 }

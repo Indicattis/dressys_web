@@ -3,16 +3,19 @@ import ClientDTO from "@/data/types/client";
 import axios from "axios";
 
 
-export const client_login = async (infos: ClientDTO) => {
+export const client_login = async (infos: ClientDTO, isLocal: boolean) => {
     const data = {
         client_mail: infos.client_mail,
         client_password: infos.client_password
     }
     try {
         const response = await axios.post(`${serverUrl}/client-access`, data);
-        
-        sessionStorage.setItem('token', response.data.token);
-
+        const token = response.data.token;
+        if(isLocal) {
+            localStorage.setItem('token', token);
+        } else {
+            sessionStorage.setItem('token', token);
+        }
         return response.data
 
     } catch (error: any) {

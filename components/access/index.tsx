@@ -5,10 +5,10 @@ import { useState } from "react";
 import AccessLoginComponent from "./access-login";
 import AccessSignComponent from "./access-sign";
 import { ToastContainer } from "react-toastify";
-import LogoComponent from "@/app/components/INC/header/logo";
 import { GoogleLogin, GoogleOAuthProvider  } from "@react-oauth/google";
 import AccessGoogleComponent from "./access-google-oauth";
 import AccessDivision from "./access-div";
+import LogoComponent from "../inc/header/logo";
 
 
 
@@ -22,7 +22,6 @@ export default function AccessComponent() {
                 <div className={`${model == 2 ? "text-white": "text-gray"} z-20 w-full h-14 flex items-center justify-center cursor-pointer text-center`} onClick={() => setModel(2)}>Cadastrar</div>
                 <span className={`transition-all ease-in-out rounded-full absolute w-1/2 h-full bg-white shadow-2xl shadow-black  ${model == 1 ? "left-0 bg-gradient-to-tr from-[#4F7D95b1] to-blue" : "left-28 bg-gradient-to-tr from-red-400 to-pink"} rounded-sm z-10`}></span>
             </div>
-            <ToastContainer theme="colored"/>
             <div className="flex flex-col w-[500px] gap-3 items-center p-5 justify-center max-md:w-full">
             
                 <LogoComponent></LogoComponent>
