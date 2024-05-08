@@ -15,8 +15,18 @@ export const client_login = async (infos: ClientDTO) => {
 
         return response.data
 
-    } catch (error) {
-        throw error;
+    } catch (error: any) {
+        if (error.response) {
+            console.error("Erro ao realizar login - Status:", error.response.status);
+            console.error("Mensagem de erro:", error.response.data);
+            throw new Error(error.response.data.error);
+        } else if (error.request) {
+            console.error("Não foi recebida resposta do servidor.");
+            throw new Error("Não foi possível conectar ao servidor.");
+        } else {
+            console.error("Erro ao fazer a requisição:", error.message);
+            throw new Error("Erro durante a requisição.");
+        }
     }
 };
 
@@ -24,20 +34,18 @@ export async function client_sign(data: any) {
     try {
         const response = await axios.post(`${serverUrl}/client-insert`, data);
         console.log(response.data);
-        return response.data; // Retorna os dados do cliente cadastrado
+        return response.data;
     } catch (error: any) {
         if (error.response) {
             console.error("Erro ao cadastrar cliente - Status:", error.response.status);
             console.error("Mensagem de erro:", error.response.data);
-            throw new Error(error.response.data.error); // Lança apenas a mensagem de erro
+            throw new Error(error.response.data.error);
         } else if (error.request) {
-            // A requisição foi feita, mas não houve resposta do servidor
             console.error("Não foi recebida resposta do servidor.");
-            throw new Error("Não foi possível conectar ao servidor."); // Lança o erro para tratamento no front-end
+            throw new Error("Não foi possível conectar ao servidor.");
         } else {
-            // Ocorreu um erro durante a requisição
             console.error("Erro ao fazer a requisição:", error.message);
-            throw new Error("Erro durante a requisição."); // Lança o erro para tratamento no front-end
+            throw new Error("Erro durante a requisição.");
         }
     }
 }

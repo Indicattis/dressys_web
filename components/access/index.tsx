@@ -6,7 +6,9 @@ import AccessLoginComponent from "./access-login";
 import AccessSignComponent from "./access-sign";
 import { ToastContainer } from "react-toastify";
 import LogoComponent from "@/app/components/INC/header/logo";
-
+import { GoogleLogin, GoogleOAuthProvider  } from "@react-oauth/google";
+import AccessGoogleComponent from "./access-google-oauth";
+import AccessDivision from "./access-div";
 
 
 
@@ -24,12 +26,10 @@ export default function AccessComponent() {
             <div className="flex flex-col w-[500px] gap-3 items-center p-5 justify-center max-md:w-full">
             
                 <LogoComponent></LogoComponent>
-                    {model == 1 && (
-                        <AccessLoginComponent/>
-                    )}
-                    {model == 2 && (
-                        <AccessSignComponent/>
-                    )}
+                {model == 1 && <AccessLoginComponent/>}
+                {model == 2 && <AccessSignComponent/>}
+                <AccessDivision/>
+                <AccessGoogleComponent/>
             </div>
         </section>
     )

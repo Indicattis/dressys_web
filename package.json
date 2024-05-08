@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
     "@tabler/icons": "^2.47.0",
     "@tabler/icons-react": "^2.47.0",
     "@types/node": "^20",

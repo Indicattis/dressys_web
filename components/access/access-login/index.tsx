@@ -20,10 +20,11 @@ export default function AccessLoginComponent() {
             if (response.authenticated) {
                 toast.info("Seja bem vinda a melhor e mais linda amiga do João Pedro! "+UserName)
             } else {
-                toast.error("Usuário ou senha incorretos! A Amanda saberia")
+                toast.error("Usuário ou senha incorretos!")
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
+            toast.error("Erro! "+ error.message);
         } finally {
         }
     };
@@ -47,7 +48,7 @@ export default function AccessLoginComponent() {
                 {...register("client_mail", {
                     required: "Este campo é obrigatório",
                 })}/>
-                <TooltipComponent description="Digite o E-mail cadastrado"  className={`_input_icon`}>
+                <TooltipComponent description="Digite o seu E-mail"  className={`_input_icon`}>
                     <IconUser></IconUser>
                 </TooltipComponent>
             </motion.div>

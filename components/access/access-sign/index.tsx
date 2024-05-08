@@ -80,7 +80,7 @@ export default function AccessSignComponent() {
                         required: "Este campo é obrigatório",
                     })}
                 />
-                <TooltipComponent description="Nome Completo (obrigatório)" className={`_input_icon_2`}>
+                <TooltipComponent description="Nome Completo (*)" className={`_input_icon_2`}>
                     <IconWriting></IconWriting>
                 </TooltipComponent>
             </motion.div>
@@ -105,7 +105,7 @@ export default function AccessSignComponent() {
                             : "focus:text-green-500"
                     }`}
                 />
-                <TooltipComponent description="E-mail (obrigatório)" className={`_input_icon_2`}>
+                <TooltipComponent description="E-mail (*)" className={`_input_icon_2`}>
                     <IconUser></IconUser>
                 </TooltipComponent>
             </motion.div>
@@ -194,7 +194,7 @@ export default function AccessSignComponent() {
                     required
                     className={`_input`}
                 />
-                <TooltipComponent description="Celular / Whatsapp (obrigatório)" className={`_input_icon_2`}>
+                <TooltipComponent description="Celular sem DDD (*)" className={`_input_icon_2`}>
                     <IconPhone></IconPhone>
                 </TooltipComponent>
             </motion.div>
@@ -214,7 +214,7 @@ export default function AccessSignComponent() {
                     className={`_input`}
                     value={birth}
                 />
-                <TooltipComponent description="Aniversário (obrigatório)" className={`_input_icon_2`}>
+                <TooltipComponent description="Aniversário (*)" className={`_input_icon_2`}>
                     <IconCalendarMonth></IconCalendarMonth>
                 </TooltipComponent>
             </motion.div>
@@ -274,7 +274,7 @@ export default function AccessSignComponent() {
                     required
                     className={`_input`}
                 />
-                <TooltipComponent description="Senha (obrigatório)" className={`_input_icon_2`}>
+                <TooltipComponent description="Senha (*)" className={`_input_icon_2`}>
                     <IconPassword></IconPassword>
                 </TooltipComponent>
             </motion.div>
@@ -298,7 +298,7 @@ export default function AccessSignComponent() {
                     className={`_input`}
                     required
                 />
-                <TooltipComponent description="Confirmação de Senha (obrigatório)" className={`_input_icon_2`}>
+                <TooltipComponent description="Confirmação de Senha (*)" className={`_input_icon_2`}>
                     <IconPassword></IconPassword>
                 </TooltipComponent>
             </motion.div>

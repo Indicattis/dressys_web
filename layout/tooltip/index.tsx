@@ -37,18 +37,8 @@ export default function TooltipComponent({ description, children, className }: T
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.1 }}
-                    className="text-xs font-mono text-nowrap"
-                    style={{
-                        position: "absolute",
-                        top: "-50%",
-                        left: "-50%",
-                        transform: "translateX(-50%)",
-                        backgroundColor: "rgba(0, 0, 0, 0.6)",
-                        color: "#fff",
-                        padding: "0.75rem",
-                        borderRadius: "5px",
-                        zIndex: 9999,
-                    }}
+                    className="text-xs font-mono text-nowrap tooltip"
+                    
                 >
                     {description}
                 </motion.div>
