@@ -1,7 +1,7 @@
 'use client'
 
+import DefaultButton from "@/layout/button/button";
 import { useState } from "react";
-import DefaultButton from "../../layout/button/button"
 
 
 
