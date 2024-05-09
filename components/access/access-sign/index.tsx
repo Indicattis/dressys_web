@@ -31,8 +31,11 @@ import ProgressBarDefault from "@/layout/progressbar_levels";
 import { IconLockCheck } from "@tabler/icons-react";
 import TooltipComponent from "@/layout/tooltip";
 import DefaultButton from "@/layout/button/button";
+import useLoading from "@/data/hooks/useLoading";
+import LoadComponent from "@/layout/load";
 
 export default function AccessSignComponent() {
+    const { loading, loadInit, loadEnd } = useLoading();
     const { register, handleSubmit } = useForm<ClientDTO>();
     const [phone, setPhone] = useState<string>("");
     const [birth, setBirth] = useState<string>("");
@@ -43,6 +46,7 @@ export default function AccessSignComponent() {
     // const [genre, setGenre] = useState(0);
 
     const onSubmit = async (data: ClientDTO) => {
+        loadInit();
         data.client_birthday = convertToISOString(birth);
         data.client_phone = phone;
         data.client_password = password;
@@ -56,6 +60,7 @@ export default function AccessSignComponent() {
             console.error(error);
             toast.error("Erro! "+ error.message);
         } finally {
+            loadEnd();
         }
     };
 
@@ -64,6 +69,7 @@ export default function AccessSignComponent() {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-3 items-center w-full"
         >
+        {loading && <LoadComponent/>}
             <motion.div
                 className={`_input_wide`}
                 initial={{ opacity: 0, scale: 0 }}
@@ -219,7 +225,7 @@ export default function AccessSignComponent() {
                 </TooltipComponent>
             </motion.div>
             <motion.div
-                className={`_input_wide flex w-full`}
+                className={`_input_wide flex h-8 w-full`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
@@ -308,11 +314,11 @@ export default function AccessSignComponent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 1.5 }}
-                className="w-full"
+                className="w-full flex justify-center"
             >
                 <DefaultButton
-                    rounded="md"
-                    wide="full"
+                    rounded="sm"
+                    wide="lg"
                     type="submit"
                     variant="pink"
                 >

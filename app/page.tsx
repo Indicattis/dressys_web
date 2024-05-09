@@ -1,12 +1,19 @@
 
 import AccessComponent from "@/components/access";
 import Header from "@/components/inc/header";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   return (
-    <main className="m-auto flex flex-col items-center gap-10 max-w-[920px]">
-      <Header/>
-      <AccessComponent/>
+    <main className="flex flex-col min-h-screen py-20 items-center ">
+        <Header/>
+        <AccessComponent/>
+        <ToastContainer
+        draggable 
+        position="top-center"
+        closeOnClick
+        hideProgressBar
+        theme="colored"/>
     </main>
   );
 }

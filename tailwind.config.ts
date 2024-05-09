@@ -26,6 +26,7 @@ const config: Config = {
         'wildword': ['wildword', 'sans-serif'],
         'newake': ['newake', 'sans-serif'],
         'hunters': ['hunters', 'sans-serif'],
+        'jetbrains': ['jetbrains', 'sans-serif'],
       },
     },
   },

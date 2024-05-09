@@ -1,45 +1,21 @@
 'use client'
 
-import {
-    IconAddressBook,
-    IconButterfly,
-    IconHome2,
-    IconMenuDeep,
-    IconUser,
-} from "@tabler/icons-react";
-import { useUserToken } from "@/data/hooks/useSession";
-import LogoComponent from "./logo";
-import DefaultButton from "@/layout/button/button";
-import NavItem from "./header-item";
+import { IconBellRinging, IconSearch } from "@tabler/icons-react";
 
 export default function Header() {
-    const {UserLoged, UserName} = useUserToken();
     return (
-        <header className=" flex p-1 items-center justify-between w-full">
-            <LogoComponent></LogoComponent>
-            <nav className="flex justify-center items-center gap-10 font-poppins">
-                <NavItem icon={<IconHome2 />} title="Home" />
-                <NavItem icon={<IconButterfly />} title="Serviços" />
-                <NavItem icon={<IconAddressBook />} title="Contato" />
-            </nav>
-            <div className="flex gap-2">
-                <div>
-                {UserLoged ? (
-                    
-                    <DefaultButton wide="sm" variant="pink" rounded="full">
-                    <IconUser />
-                    </DefaultButton>
-                
-                ) : (
-                    <DefaultButton wide="sm" variant="pink">
-                    Login
-                    </DefaultButton>
-                )}
+        <header className="fixed top-0 z-50 flex w-full bg-zinc-100 max-w-[1080px] text-gray">
+            <nav className="flex gap-2 p-3 w-full">
+                <div className="flex bg-white rounded-full w-full">
+                    <input placeholder="Buscar" className="outline-none p-1 rounded-full w-full" type="text" />
+                    <div className="p-1 ">
+                        <IconSearch/>
+                    </div>
                 </div>
-                <DefaultButton wide="sm" variant="default" rounded="full">
-                    <IconMenuDeep />
-                </DefaultButton>
-            </div>
+                <div className="p-1">
+                    <IconBellRinging/>
+                </div>
+            </nav>
         </header>
     );
 }

@@ -8,6 +8,12 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'jetbrains';
+    src: url("../public/fonts/JetBrainsMono-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
 
   :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,10 +37,6 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-.shadow {
-    background: linear-gradient(#000, #ffffff00);
 }
 
 ._input {
@@ -93,6 +95,49 @@ body {
     z-index: 9999;
     text-align: center;
 }
+
+._modal_display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000000e;
+    z-index: 50;
+    display: flex;
+    /* flex-direction: column; */
+    justify-items: center;
+    align-items: center;
+    place-items: center;
+}
+._modal {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    text-shadow: 0 1px 10px 0 #fff;
+    border-radius: 100%;
+}
+._modal._load {
+    top: 20%;
+    box-shadow: 0 5px 20px 0 #ffffff;
+}
+._button {
+    scale: 1;
+    box-shadow: 0 1px 5px 0 #bdbdbd;
+}
+._button:active {
+    scale: 0.95;
+}
+._button._full {
+    height: 2.5rem;
+    width: 100%;
+}
+._button._large {
+    height: 2rem;
+    width: 12.5rem;
+}
+
 
 @media screen and (max-width: 768px) {
     .tooltip {

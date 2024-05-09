@@ -8,12 +8,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import TooltipComponent from "@/layout/tooltip";
 import { useState } from "react";
 import DefaultButton from "@/layout/button/button";
+import useLoading from "@/data/hooks/useLoading";
+import LoadComponent from "@/layout/load";
+import { handleEmailChange } from "@/utils/formatter";
 
 export default function AccessLoginComponent() {
+    const { loading, loadInit, loadEnd } = useLoading();
     const { register, handleSubmit } = useForm<ClientDTO>();
     const [isLocal, setLocal] = useState<boolean>(false)
+    const [email, setEmail] = useState<string>("");
+    const [mailErrorMessage, setMailErrorMessage] = useState("");
 
     const onSubmit = async (data: ClientDTO) => {
+        loadInit();
+        data.client_mail = email;
         try {
             const response = await client_login(data, isLocal);
 
@@ -26,6 +34,7 @@ export default function AccessLoginComponent() {
             console.error(error);
             toast.error("Erro! "+ error.message);
         } finally {
+            loadEnd();
         }
     };
 
@@ -34,6 +43,7 @@ export default function AccessLoginComponent() {
         <form 
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-3 items-center w-full ">
+            {loading && <LoadComponent/>}
             <motion.div
                 className={`_input_wide`}
                 initial={{ opacity: 0, scale: 0 }}
@@ -41,13 +51,20 @@ export default function AccessLoginComponent() {
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.1 }}
             >
-                <input 
-                placeholder="E-mail"
-                type="text" 
-                className={`_input`} 
-                {...register("client_mail", {
-                    required: "Este campo é obrigatório",
-                })}/>
+                <input
+                    onChange={(event) =>
+                        handleEmailChange(event, setEmail, setMailErrorMessage)
+                    }
+                    placeholder="E-mail"
+                    value={email}
+                    type="text"
+                    required
+                    className={`_input ${
+                        mailErrorMessage == "E-mail inválido"
+                            ? "focus:text-red-500"
+                            : "focus:text-green-500"
+                    }`}
+                />
                 <TooltipComponent description="Digite o seu E-mail"  className={`_input_icon`}>
                     <IconUser></IconUser>
                 </TooltipComponent>
@@ -64,9 +81,8 @@ export default function AccessLoginComponent() {
                 placeholder="Senha"
                 type="password" 
                 className={`_input`} 
-                {...register("client_password", {
-                    required: "Este campo é obrigatório",
-                })}/>
+                required
+                {...register("client_password")}/>
                 <TooltipComponent description="Digite a sua Senha"  className={`_input_icon`}>
                     <IconPassword></IconPassword>
                 </TooltipComponent>
@@ -76,7 +92,6 @@ export default function AccessLoginComponent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.5 }}className="flex gap-1">
-                <input type="checkbox" name="" id="session-check" className="hidden" checked={isLocal}/>
                 <div className="flex gap-2 items-center justify-center text-gray text-sm font-mono cursor-pointer" onClick={() => setLocal(!isLocal)}>
                     {!isLocal ? <IconSquare width={20} height={20}/> : <IconSquareCheck width={20} height={20}/>}
                     <label className="" htmlFor="session-check"
@@ -89,11 +104,11 @@ export default function AccessLoginComponent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.7 }}
-                className="w-full"
+                className="w-full flex justify-center"
             >
                 <DefaultButton
-                    rounded="md"
-                    wide="full"
+                    rounded="sm"
+                    wide="lg"
                     type="submit"
                     variant="blue"
                 >
