@@ -24,7 +24,7 @@ export default function DefaultButton({children, variant, onClick, type, wide, r
         ${wide == "lg" ? "_large" : ""}
         ${wide == "xl" ? "h-16 w-16" : ""}
         ${wide == "full" ? "_full" : ""}
-        ${variant == "default" ? ` text-gray hover:text-pink` : ""}
+        ${variant == "default" ? ` text-white bg-gray` : ""}
         ${variant == "blue" ? ` text-white bg-gradient-to-tr from-dark to-blue ` : ""}
         ${variant == "config" ? ` text-slate-200 bg-slate-700 active:scale-95` : ""}
         ${variant == "pink" ? ` text-white bg-gradient-to-tr from-red-400 to-pink` : ""}
