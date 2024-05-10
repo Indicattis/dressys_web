@@ -3,85 +3,103 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'hunters';
+    font-family: "hunters";
     src: url("../public/fonts/Hunters.otf");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
-    font-family: 'jetbrains';
+}
+@font-face {
+    font-family: "jetbrains";
     src: url("../public/fonts/JetBrainsMono-Regular.ttf");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
-    font-family: 'norms';
+}
+@font-face {
+    font-family: "jetbrains";
+    src: url("../public/fonts/JetBrainsMono-Medium.ttf");
+    font-weight: medium;
+    font-style: medium;
+}
+@font-face {
+    font-family: "jetbrains";
+    src: url("../public/fonts/JetBrainsMono-Thin.ttf");
+    font-weight: thin;
+    font-style: thin;
+}
+@font-face {
+    font-family: "jetbrains";
+    src: url("../public/fonts/JetBrainsMono-Bold.ttf");
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face {
+    font-family: "norms";
     src: url("../public/fonts/TT\ Norms\ Pro\ Regular.otf");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
-    font-family: 'norms';
+}
+@font-face {
+    font-family: "norms";
     src: url("../public/fonts/TT\ Norms\ Pro\ Thin.otf");
     font-weight: thin;
     font-style: thin;
-  }
-  @font-face {
-    font-family: 'norms';
+}
+@font-face {
+    font-family: "norms";
     src: url("../public/fonts/TT\ Norms\ Pro\ Bold.otf");
     font-weight: bold;
     font-style: bold;
-  }
-  @font-face {
-    font-family: 'norms';
+}
+@font-face {
+    font-family: "norms";
     src: url("../public/fonts/TT\ Norms\ Pro\ Medium.otf");
     font-weight: medium;
     font-style: medium;
-  }
+}
 
-  :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 body {
     min-height: 100vh;
     background-repeat: no-repeat;
     background: white;
-  }
+}
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
 ._input {
-  /* border-left: 3px solid #4F7D95; */
-  padding: 0.75rem;
-  width: 100%;
-  background-color: transparent;
-  border: 1px solid #242424;
-  outline: none;
-  transition: all .2s;
-  /* box-shadow: 0 1px 5px 0 #242424; */
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  color: #fff;
+    /* border-left: 3px solid #4F7D95; */
+    padding: 0.75rem;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #242424;
+    outline: none;
+    transition: all 0.2s;
+    /* box-shadow: 0 1px 5px 0 #242424; */
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    color: #fff;
 }
 ._input::placeholder {
-  color: #928899;
+    color: #928899;
 }
 ._input:focus {
-  transition: all .2s;
-  border: 1px solid #F5618B;
+    transition: all 0.2s;
+    border: 1px solid #f5618b;
 }
 
 /* ._input_icon {
@@ -93,19 +111,18 @@ body {
 } */
 
 ._input_icon_2 {
-  position: absolute;
-  color: #F5618B;
-  right: 0;
-  top: 0;
-  padding: 0.50rem;
+    position: absolute;
+    color: #f5618b;
+    right: 0;
+    top: 0;
+    padding: 0.5rem;
 }
 
 ._input_wide {
-  position: relative;
-  width: 100%;
-  border-radius: 0.5rem;
+    position: relative;
+    width: 100%;
+    border-radius: 0.5rem;
 }
-
 
 .tooltip {
     position: absolute;
@@ -168,7 +185,6 @@ body {
     height: 2rem;
     width: 2rem;
 }
-
 
 @media screen and (max-width: 768px) {
     .tooltip {
