@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
+import Header from "@/components/inc/header";
 
 export const metadata: Metadata = {
   title: "Dressys App",
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body className={`font-poppins`}>{children}</body>
+        <body className={`font-norms bg-dark`}>
+            <Header/>
+            {children}
+            </body>
     </html>
   );
 }

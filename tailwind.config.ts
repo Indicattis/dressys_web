@@ -14,12 +14,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        blue: "#4F7D95",
-        pink: "#FCA5A5",
-        dark: "#274D68",
-        gray: "#676f7d",
-        white: "#ffffff",
-        gold: "#F5B17A"
+        blue: "#928899",
+        pink: "#F5618B",
+        sweetPink: "#f79db6",
+        dark: "#1A1B1E",
+        gray: "#242424",
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
@@ -27,6 +26,7 @@ const config: Config = {
         'newake': ['newake', 'sans-serif'],
         'hunters': ['hunters', 'sans-serif'],
         'jetbrains': ['jetbrains', 'sans-serif'],
+        'norms': ['norms', 'sans-serif']
       },
     },
   },

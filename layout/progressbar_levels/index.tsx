@@ -16,9 +16,9 @@ export default function ProgressBarDefault({color}: ProgressBarProps) {
         return (
             <div className="w-full  relative flex">
             
-            <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244" style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244" style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244" style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#242424" style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#242424" style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#242424" style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
         </div>
         )
     } 
@@ -26,9 +26,9 @@ export default function ProgressBarDefault({color}: ProgressBarProps) {
         return (
             <div className="w-full  relative flex gap-1">
             
-            <span className="w-1/3 "> <IconLetterI  color="rgb(239, 68, 68"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI  color="#F5618B"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#242424"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#242424"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
         </div>
         )
     } 
@@ -36,9 +36,9 @@ export default function ProgressBarDefault({color}: ProgressBarProps) {
         return (
             <div className="w-full  relative flex gap-1">
             
-            <span className="w-1/3 "> <IconLetterI  color="rgb(250, 204, 21"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(250, 204, 21"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
-            <span className="w-1/3 "> <IconLetterI color="rgb(254, 240, 244"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI  color="#4F7D95"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#4F7D95"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
+            <span className="w-1/3 "> <IconLetterI color="#242424"  style = {{transform: 'rotate(90deg)' }} width={60} height={60} ></IconLetterI > </span>
         </div>
         )
     } 

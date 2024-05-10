@@ -9,8 +9,7 @@ export default function AccessGoogleComponent() {
             <GoogleLogin 
             useOneTap
             text="continue_with"
-            theme="outline"
-            context="signin"
+            theme="filled_black"
             onSuccess={() => console.log("login realizado!")}/>
         </GoogleOAuthProvider>
     )

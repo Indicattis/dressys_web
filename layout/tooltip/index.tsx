@@ -37,7 +37,7 @@ export default function TooltipComponent({ description, children, className }: T
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.1 }}
-                    className="text-xs font-mono text-nowrap tooltip"
+                    className="text-xs font-jetbrains text-nowrap opacity-10 tooltip"
                     
                 >
                     {description}

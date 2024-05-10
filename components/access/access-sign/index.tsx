@@ -107,7 +107,7 @@ export default function AccessSignComponent() {
                     required
                     className={`_input ${
                         mailErrorMessage == "E-mail inválido"
-                            ? "focus:text-red-500"
+                            ? "focus:text-blue"
                             : "focus:text-green-500"
                     }`}
                 />
@@ -118,7 +118,7 @@ export default function AccessSignComponent() {
             {mailErrorMessage && (
                 <div
                     className={`font-mono text-sm ${
-                        mailErrorMessage == "E-mail inválido" && "text-red-500"
+                        mailErrorMessage == "E-mail inválido" && "text-blue"
                     }`}
                 >
                     {mailErrorMessage}
@@ -235,11 +235,11 @@ export default function AccessSignComponent() {
                 <ProgressBarDefault color={passErrorMessage}></ProgressBarDefault>
 
                 </div>
-                <div className=" flex items-end justify-center">
+                <div className=" flex items-end justify-center px-2">
                     {passErrorMessage == 5 ? (
                         <IconLockCheck color="rgb(34, 197, 94)"></IconLockCheck>
                     ) : (
-                        <IconLockX color="rgb(254, 240, 244)"></IconLockX>
+                        <IconLockX color="#242424"></IconLockX>
                     )}
                 </div>
                 {/* {passErrorMessage != 0 ? (
@@ -317,7 +317,7 @@ export default function AccessSignComponent() {
                 className="w-full flex justify-center"
             >
                 <DefaultButton
-                    rounded="sm"
+                    rounded="full"
                     wide="lg"
                     type="submit"
                     variant="pink"

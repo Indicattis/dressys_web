@@ -61,11 +61,11 @@ export default function AccessLoginComponent() {
                     required
                     className={`_input ${
                         mailErrorMessage == "E-mail inválido"
-                            ? "focus:text-red-500"
+                            ? "focus:text-blue"
                             : "focus:text-green-500"
                     }`}
                 />
-                <TooltipComponent description="Digite o seu E-mail"  className={`_input_icon`}>
+                <TooltipComponent description="Digite o seu E-mail"  className={`_input_icon_2`}>
                     <IconUser></IconUser>
                 </TooltipComponent>
             </motion.div>
@@ -83,7 +83,7 @@ export default function AccessLoginComponent() {
                 className={`_input`} 
                 required
                 {...register("client_password")}/>
-                <TooltipComponent description="Digite a sua Senha"  className={`_input_icon`}>
+                <TooltipComponent description="Digite a sua Senha"  className={`_input_icon_2`}>
                     <IconPassword></IconPassword>
                 </TooltipComponent>
             </motion.div>
@@ -92,7 +92,7 @@ export default function AccessLoginComponent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{ delay: 0.5 }}className="flex gap-1">
-                <div className="flex gap-2 items-center justify-center text-gray text-sm font-mono cursor-pointer" onClick={() => setLocal(!isLocal)}>
+                <div className="flex gap-2 items-center justify-center text-blue text-xs font-jetbrains cursor-pointer" onClick={() => setLocal(!isLocal)}>
                     {!isLocal ? <IconSquare width={20} height={20}/> : <IconSquareCheck width={20} height={20}/>}
                     <label className="" htmlFor="session-check"
                     >Manter-me conectado</label>
@@ -107,10 +107,10 @@ export default function AccessLoginComponent() {
                 className="w-full flex justify-center"
             >
                 <DefaultButton
-                    rounded="sm"
+                    rounded="full"
                     wide="lg"
                     type="submit"
-                    variant="blue"
+                    variant="pink"
                 >
                     Entrar
                 </DefaultButton>

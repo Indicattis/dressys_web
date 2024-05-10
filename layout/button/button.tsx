@@ -11,7 +11,7 @@ interface DefaultButtonProps {
 export default function DefaultButton({children, variant, onClick, type, wide, rounded}: DefaultButtonProps) {
     return (
         <button type={type} onClick={onClick} className={`
-        _button
+        _button font-bold shadow-lg shadow-gray
         transition-all 
         flex justify-center items-center gap-2
         ${rounded == "sm" ? "rounded-sm" : ""}
@@ -20,14 +20,14 @@ export default function DefaultButton({children, variant, onClick, type, wide, r
         ${rounded == "full" ? "rounded-full" : ""}
 
         ${wide == "sm" ? "h-10 w-10" : ""}
-        ${wide == "md" ? "h-12 w-12" : ""}
+        ${wide == "md" ? "_medium" : ""}
         ${wide == "lg" ? "_large" : ""}
         ${wide == "xl" ? "h-16 w-16" : ""}
         ${wide == "full" ? "_full" : ""}
-        ${variant == "default" ? ` text-white bg-gray` : ""}
+        ${variant == "default" ? ` text-gray bg-text ` : ""}
         ${variant == "blue" ? ` text-white bg-gradient-to-tr from-dark to-blue ` : ""}
         ${variant == "config" ? ` text-slate-200 bg-slate-700 active:scale-95` : ""}
-        ${variant == "pink" ? ` text-white bg-gradient-to-tr from-red-400 to-pink` : ""}
+        ${variant == "pink" ? ` text-white bg-gradient-to-t from-pink to-sweetPink` : ""}
         `}>
             {children}
         </button>
