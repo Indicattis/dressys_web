@@ -4,8 +4,6 @@ import { useState } from "react";
 
 import AccessLoginComponent from "./access-login";
 import AccessSignComponent from "./access-sign";
-import { ToastContainer } from "react-toastify";
-import { GoogleLogin, GoogleOAuthProvider  } from "@react-oauth/google";
 import AccessGoogleComponent from "./access-google-oauth";
 import AccessDivision from "./access-div";
 import LogoComponent from "../inc/header/logo";
@@ -20,8 +18,8 @@ export default function AccessComponent() {
             {/* <legend className="text-text w-full p-5 font-bold text-base">Entre ou cadastre-se!</legend> */}
             <div className="w-full flex justify-center">
                 <div className="font-bold text-sm tracking-wider relative flex justify-center items-center h-10 w-48 overflow-hidden rounded-t-lg">
-                    <div className={`${model == 1 ? "text-pink": "text-blue"} z-20 w-full h-14 flex items-center justify-center cursor-pointer text-center`} onClick={() => setModel(1)}>Entrar</div>
-                    <div className={`${model == 2 ? "text-pink": "text-blue"} z-20 w-full h-14 flex items-center justify-center cursor-pointer text-center`} onClick={() => setModel(2)}>Cadastrar</div>
+                    <div className={`${model == 1 ? "text-pink": "text-white"} z-20 w-full h-14 flex items-center justify-center cursor-pointer text-center`} onClick={() => setModel(1)}>Entrar</div>
+                    <div className={`${model == 2 ? "text-pink": "text-white"} z-20 w-full h-14 flex items-center justify-center cursor-pointer text-center`} onClick={() => setModel(2)}>Cadastrar</div>
                     <span className={`transition-all ease-in-out rounded-full absolute w-1/2 top-8 h-[2px] bg-pink ${model == 1 ? "left-0 " : "left-24 "} rounded-sm z-10`}></span>
                 </div>
             </div>

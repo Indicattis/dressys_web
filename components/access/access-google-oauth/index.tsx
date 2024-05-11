@@ -27,12 +27,12 @@ export default function AccessGoogleComponent() {
             } 
         } catch (error: any) {
             console.error(error);
-            toast.info("Erro! "+ error.message);
+            toast.info("Aviso! "+ error.message);
         } finally {
             loadEnd();
         }
     }
-    
+
     return (
         <GoogleOAuthProvider clientId="753411784831-paf4239i5bci83ss1e4ju4akl8mdokqh.apps.googleusercontent.com"> 
             {loading && <LoadComponent/>}
