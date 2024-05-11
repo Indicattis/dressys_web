@@ -2,7 +2,7 @@ import { IconDoorEnter, IconPassword, IconSquare, IconSquareCheck, IconUser, } f
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ClientDTO from "@/data/types/client";
-import { client_login } from "@/data/contexts/client";
+import { client_login, client_login_google_oauth } from "@/data/contexts/client";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TooltipComponent from "@/layout/tooltip";

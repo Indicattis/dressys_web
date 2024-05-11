@@ -20,15 +20,12 @@ const ScaleIn = {
 
 const FadeIn = {
     start: {
-        top: "-200px",
         opacity: 0,
     },
     visible: {
-        top: "0px",
         opacity: 1,
     },
     end: {
-        top: "-200px",
         opacity: 0,
         transition: { duration: 2 },
     }

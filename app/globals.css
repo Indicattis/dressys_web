@@ -14,7 +14,7 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
+/* @font-face {
     font-family: "jetbrains";
     src: url("../public/fonts/JetBrainsMono-Medium.ttf");
     font-weight: medium;
@@ -31,7 +31,7 @@
     src: url("../public/fonts/JetBrainsMono-Bold.ttf");
     font-weight: bold;
     font-style: bold;
-}
+} */
 @font-face {
     font-family: "norms";
     src: url("../public/fonts/TT\ Norms\ Pro\ Regular.otf");

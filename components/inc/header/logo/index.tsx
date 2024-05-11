@@ -1,5 +1,6 @@
 
-
+import { FadeIn, ScaleIn } from "@/layout/anim"
+import { motion } from "framer-motion"
 
 interface LogoProps {
     color?: "blue" | "pink",
@@ -8,11 +9,18 @@ interface LogoProps {
 export default function LogoComponent({color}: LogoProps) {
     return (
         
-        <div className={`relative w-32 h-32 flex items-center justify-center  rounded-full p-3 transition-all
+        <motion.div 
+        className={`relative w-32 h-32 flex items-center justify-center  rounded-full p-3 transition-all
         ${!color && "bg-gray"}
         ${color == "blue" && "bg-gray"}
         ${color == "pink" && "bg-gradient-to-tr from-pink to-sweetPink"}
-        `}>
+        `}
+        
+        variants={FadeIn}
+        initial="start"
+        animate="visible"
+        exit="end"
+        >
             <h1 className={`font-hunters text-5xl transition-all
             ${!color && "text-white"}
             ${color == "blue" && "text-white"}
@@ -25,6 +33,6 @@ export default function LogoComponent({color}: LogoProps) {
             ${color == "pink" && "text-blue"}`}>
                 Moda
             </div>
-        </div>
+        </motion.div>
     )
 }
