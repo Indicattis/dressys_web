@@ -19,6 +19,8 @@ export default function AccessLoginComponent() {
     const [email, setEmail] = useState<string>("");
     const [mailErrorMessage, setMailErrorMessage] = useState("");
 
+    
+
     const onSubmit = async (data: ClientDTO) => {
         loadInit();
         data.client_mail = email;
@@ -40,7 +42,7 @@ export default function AccessLoginComponent() {
 
 
     return (
-        <form 
+        <motion.form 
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-3 items-center w-full ">
             {loading && <LoadComponent/>}
@@ -49,7 +51,7 @@ export default function AccessLoginComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.1 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.1}}
             >
                 <input
                     onChange={(event) =>
@@ -75,7 +77,7 @@ export default function AccessLoginComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.2}}
             >
                 <input 
                 placeholder="Senha"
@@ -91,7 +93,8 @@ export default function AccessLoginComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.5 }}className="flex gap-1">
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.3}}
+                className="flex gap-1">
                 <div className="flex gap-2 items-center justify-center text-blue text-xs font-jetbrains cursor-pointer" onClick={() => setLocal(!isLocal)}>
                     {!isLocal ? <IconSquare width={20} height={20}/> : <IconSquareCheck width={20} height={20}/>}
                     <label className="" htmlFor="session-check"
@@ -103,7 +106,7 @@ export default function AccessLoginComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.4}}
                 className="w-full flex justify-center"
             >
                 <DefaultButton
@@ -115,6 +118,6 @@ export default function AccessLoginComponent() {
                     Entrar
                 </DefaultButton>
             </motion.div>
-        </form>
+        </motion.form>
     );
 }

@@ -75,7 +75,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.1 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.1}}
             >
                 <input
                     placeholder="Nome"
@@ -95,7 +95,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.2}}
             >
                 <input
                     onChange={(event) =>
@@ -190,7 +190,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.3}}
             >
                 <input
                     onChange={(event) => handlePhoneChange(event, setPhone)}
@@ -210,7 +210,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.4}}
             >
                 <input
                     onChange={(event) => handleDateChange(event, setBirth)}
@@ -229,7 +229,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: .9 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.5}}
             >
                 <div className="w-full">
                 <ProgressBarDefault color={passErrorMessage}></ProgressBarDefault>
@@ -264,7 +264,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.1 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.6}}
             >
                 <input
                     onChange={(event) =>
@@ -289,7 +289,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.3 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.7}}
             >
                 <input
                     onChange={(event) =>
@@ -313,7 +313,7 @@ export default function AccessSignComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
-                transition={{ delay: 1.5 }}
+                transition={{type: "spring", stiffness: 260, damping: 25,delay: 0.8}}
                 className="w-full flex justify-center"
             >
                 <DefaultButton
