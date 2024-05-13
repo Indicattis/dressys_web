@@ -183,7 +183,7 @@ body {
 }
 ._button._medium {
     height: 2rem;
-    width: 2rem;
+    width: 8rem;
 }
 
 @media screen and (max-width: 768px) {

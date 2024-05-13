@@ -14,13 +14,6 @@ export default function Message({ message_opened, message_text, message_data, me
     return (
         <div className={`w-full flex gap-3 rounded-lg items-center h-14 overflow-hidden bg-gray shadow-md shadow-gray
         ${message_opened ? "  text-blue" : " text-white"}`}>
-            {/* <div className=" p-1">
-                {!message_opened ? (
-                    <IconMail color="rgb(255 255 255)"/>
-                ) : (
-                    <IconMailOpened color="rgb(146 136 153)"/>
-                )}
-            </div> */}
             <div>
                 <img src={`${UNSPLASH_LINK}/100x100?${message_type}`} alt="message" />
             </div>
