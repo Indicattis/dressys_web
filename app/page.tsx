@@ -1,6 +1,5 @@
 
 import AccessComponent from "@/components/access";
-import Header from "@/components/inc/header";
 import { ToastContainer } from "react-toastify";
 
 export default function Home() {

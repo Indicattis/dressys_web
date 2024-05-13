@@ -6,10 +6,7 @@ const ScaleIn = {
     },
     visible: {
         scale: 1,
-        opacity: 1,
-        transition: {
-            delay: 0.2
-        }
+        opacity: 1
     },
     end: {
         scale: 0,

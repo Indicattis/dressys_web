@@ -27,7 +27,7 @@ export default function DefaultButton({children, variant, onClick, type, wide, r
         ${variant == "default" ? ` text-gray bg-text ` : ""}
         ${variant == "blue" ? ` text-white bg-gradient-to-tr from-dark to-blue ` : ""}
         ${variant == "config" ? ` text-slate-200 bg-slate-700 active:scale-95` : ""}
-        ${variant == "pink" ? ` text-white bg-gradient-to-t from-pink to-sweetPink` : ""}
+        ${variant == "pink" ? ` text-white bg-gradient-primary` : ""}
         `}>
             {children}
         </button>

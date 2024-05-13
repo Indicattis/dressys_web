@@ -10,7 +10,7 @@ export default function LogoComponent({color}: LogoProps) {
     return (
         
         <motion.div 
-        className={`relative w-32 h-32 flex items-center justify-center  rounded-full p-3 transition-all
+        className={`relative w-32 h-32 flex items-center justify-center  rounded-full p-3 transition-all shadow-lg shadow-gray
         ${!color && "bg-gray"}
         ${color == "blue" && "bg-gray"}
         ${color == "pink" && "bg-gradient-to-tr from-pink to-sweetPink"}
