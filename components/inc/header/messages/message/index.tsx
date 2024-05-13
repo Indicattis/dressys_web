@@ -18,13 +18,14 @@ export default function Message({ message_opened, message_text, message_data, me
         ${message_opened ? "  text-blue" : " text-white"}`}>
             <motion.div 
         drag="x"
+        dragElastic={0.05}
         dragConstraints={{
             top: 0,
             left: -50,
             right: 50,
             bottom: 0,
           }}
-        className="flex items-center bg-gray rounded-lg overflow-hidden z-20 shadow-lg shadow-gray">
+        className="flex items-center bg-gray rounded-lg overflow-hidden z-20 shadow-lg shadow-gray w-full gap-3 border border-gray">
                 <div>
                     <Image width={100} height={100} src={`${UNSPLASH_LINK}/100x100?${message_type}`} alt="message" />
                 </div>
