@@ -11,31 +11,17 @@ import { IconArrowNarrowRight } from "@tabler/icons-react";
 
 
 export default function UserOptions() {
-    const container = {
-        hidden: { opacity: 1, scale: 0 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-            delayChildren: 0,
-            staggerChildren: 0.1,
-            type: "spring",
-          }
-        }
-      };
+    
     return (
         <motion.ul
-        variants={container}
-        initial="hidden"
-        animate="visible" 
-        className="flex flex-col gap-3 relative w-full h-[420px]">
-            <OptionCase position={1} description="Meus agendamentos">
+        className="relative w-full h-[420px] max-w-[420px]">
+            <OptionCase position={1} description="Meus agendamentos" legend="Monitore seus passos">
             </OptionCase>
-            <OptionCase position={2} description="Informações da conta">
+            <OptionCase position={2} description="Informações da conta" legend="Edite e controle suas informações">
             </OptionCase>
-            <OptionCase position={3} description="Minhas Experiencias">
+            <OptionCase position={3} description="Minhas Experiencias" legend="Avalie e observe suas atividades">
             </OptionCase>
-            <OptionCase position={4} description="Sobre">
+            <OptionCase position={4} description="Ajuda" legend="Tire suas dúvidas!">
             </OptionCase>
         </motion.ul>
     )
@@ -44,21 +30,20 @@ export default function UserOptions() {
 
 interface OptionCaseProps {
     position: number;
-    description: string
+    description: string;
+    legend?: string
 }
 
-function OptionCase({ position, description}: OptionCaseProps) {
+function OptionCase({ position, description, legend}: OptionCaseProps) {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const item = {  hidden: { scale: 0, rotate: -180 }, visible: {  scale: 1, rotate: 0 }, transition: { 
-        type: "spring",
-        stiffness: 260,
-        damping: 20 } };
-
     return (
         <motion.li 
-        variants={item}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ type: "spring",stiffness: 260, damping: 45, delay: position/10 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
             className={`absolute p-3 transition-all
@@ -74,20 +59,17 @@ function OptionCase({ position, description}: OptionCaseProps) {
                 <Image width={1000} height={1000} alt="option" src={UNSPLASH_LINK+"/450x450?"+description}></Image>
                 <div className={`transition-all absolute bottom-0 z-10 w-full  ${isOpen ? "bg-gray h-24" : "bg-[#000000a1] h-full"}`}>
                 </div>
-                <div className={`absolute z-20 transition-all bottom-5 ${isOpen ? "text-xl p-5" : "text-normal p-2"}`}>
+                <div className={`absolute z-20 transition-all  ${isOpen ? "text-xl p-5 bottom-5" : "text-normal p-2 bottom-0"}`}>
                     {description}
                 </div>
-                <motion.div
-                whileHover={{ y: 0 }}
-                className={`absolute z-20 bottom-0 p-2 transition-all text-blue ${isOpen ? "text-base p-5" : "text-xs p-2"}`}>
-                    ver mais
-                </motion.div>
                 {isOpen && (
                     <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{delay: 0.2}}
+                    className={`absolute z-20 bottom-0 transition-all text-blue text-base p-5`}>
+                        {legend}
+                    </motion.div>
+                )}
+                {isOpen && (
+                    <motion.div
                     className={`absolute z-30 right-0 transition-all bottom-5 p-3`}>
                         <DefaultButton wide="sm" rounded="md" variant="darkPink"><IconArrowNarrowRight/></DefaultButton>
                     </motion.div>
