@@ -51,7 +51,8 @@ function UserProfileDropdown({onClose}: DropdownProps) {
             initial={{y: 100}}
             animate={{y: 0}}
             exit={{y: 100}}
-            className=" p-3 bg-gray flex justify-center gap-3">
+            transition={{type: "spring",stiffness: 160, damping: 35,}}
+            className="absolute bottom-0 left-0 w-full p-3 bg-gray flex justify-center gap-3">
                 <DefaultButton rounded="full" wide="lg" variant="darkPink"><IconLogout2></IconLogout2>Sair</DefaultButton>
                 <DefaultButton rounded="full" wide="lg" variant="blue"><IconSettings></IconSettings>Configurações</DefaultButton>
             </motion.div>

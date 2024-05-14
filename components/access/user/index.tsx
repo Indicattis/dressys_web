@@ -10,8 +10,8 @@ export default function UserComponent() {
     const { UserLoged, UserMail, UserName, UserPhone, UserID } = useUserToken();
     return (
         <section className="flex flex-col items-center gap-3 w-full">
-            <UserOptions/>
             <UserProfile client_name={UserName} client_mail={UserMail} online={UserLoged}/>
+            <UserOptions/>
         </section>
     )
 }
