@@ -1,6 +1,6 @@
 
 interface DefaultButtonProps {
-    variant: "submit" | "alert" | "pink" | "default" | "blue" | "config"
+    variant: "submit" | "darkPink" | "pink" | "default" | "blue" | "config"
     type?: "submit" | "reset" | "button",
     children: React.ReactNode,
     onClick?: () => void,
@@ -19,7 +19,7 @@ export default function DefaultButton({children, variant, onClick, type, wide, r
         ${rounded == "lg" ? "rounded-lg" : ""}
         ${rounded == "full" ? "rounded-full" : ""}
 
-        ${wide == "sm" ? "h-10 w-10" : ""}
+        ${wide == "sm" ? "_small" : ""}
         ${wide == "md" ? "_medium" : ""}
         ${wide == "lg" ? "_large" : ""}
         ${wide == "xl" ? "h-16 w-16" : ""}
@@ -27,7 +27,8 @@ export default function DefaultButton({children, variant, onClick, type, wide, r
         ${variant == "default" ? ` text-gray bg-text ` : ""}
         ${variant == "blue" ? ` text-blue bg-transparent border border-blue ` : ""}
         ${variant == "config" ? ` text-slate-200 bg-slate-700 active:scale-95` : ""}
-        ${variant == "pink" ? ` text-white bg-gradient-to-t from-pink to-sweetPink` : ""}
+        ${variant == "pink" ? ` text-white bg-gradient-to-t from-pink to-sweetPink _pink` : ""}
+        ${variant == "darkPink" ? ` text-pink bg-gray border border-pink` : ""}
         `}>
             {children}
         </button>

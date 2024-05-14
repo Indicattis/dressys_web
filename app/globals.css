@@ -185,6 +185,13 @@ body {
     height: 2rem;
     width: 8rem;
 }
+._button._small {
+    height: 2rem;
+    width: 4rem;
+}
+._button._pink {
+    background: linear-gradient(to top, #F5618B, #f79db6);
+}
 
 @media screen and (max-width: 768px) {
     .tooltip {

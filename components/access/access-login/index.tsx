@@ -28,7 +28,7 @@ export default function AccessLoginComponent() {
             const response = await client_login(data, isLocal);
 
             if (response.authenticated) {
-                toast.info("Seja bem vinda a melhor e mais linda amiga do João Pedro! ")
+                window.location.href = "/access/user"
             } else {
                 toast.error("Usuário ou senha incorretos!")
             }

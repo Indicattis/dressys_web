@@ -18,12 +18,12 @@ export const getTokenInfo = (): { id: any; name: any; mail: any, number: any } |
   if (token) {
     try {
       const decodedToken: any = jwtDecode(token);
-      const { id, client_name, client_mail, client_number } = decodedToken;
+      const { id, client_name, client_mail, client_phone } = decodedToken; //VALORES PRECISAM SER EXATAMENTE COMO VINDO DO BACKEND
       return {
         id: id || "",
         name: client_name || "",
         mail: client_mail || "",
-        number: client_number || ""
+        number: client_phone || ""
 
       };
     } catch (error) {

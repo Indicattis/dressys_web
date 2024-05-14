@@ -1,20 +1,15 @@
 import {
     IconCalendarMonth,
     IconCheck,
-    IconDoorEnter,
     IconLockX,
-    IconMan,
     IconPassword,
     IconPhone,
-    IconPlus,
     IconUser,
-    IconWoman,
     IconWriting,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ClientDTO from "@/data/types/client";
-import { useUserToken } from "@/data/hooks/useSession";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { client_sign } from "@/data/contexts/client";
