@@ -13,7 +13,7 @@ export default function DefaultModal({onClose}: ModalProps) {
 
 
     return (
-        <div className="fixed bottom-0 left-0 right-0  h-screen z-50 flex flex-col justify-end ">
+        <div className="_modal_fixed bottom-0 left-0 right-0  h-screen z-50 flex flex-col ">
             <motion.div 
             initial={{opacity: 0}}
             animate={{opacity: 1}}
@@ -25,7 +25,8 @@ export default function DefaultModal({onClose}: ModalProps) {
             animate={{y: 0}}
             exit={{y: 100}}
             transition={{type: "spring",stiffness: 260, damping: 35,}}
-            className="absolute bottom-0 left-0 w-full p-3 bg-gray flex flex-col items-center gap-3">
+            className=" w-full p-3 flex flex-col items-center gap-3 bg-gray"
+            >
                 <div className="text-white text-xl">Tem certeza que deseja continuar?</div>
                 <div className="flex flex-col gap-3 p-3">
                     <DefaultButton onClick={() => onClose(2)} rounded="full" wide="lg" variant="pink">Confirmar</DefaultButton>
