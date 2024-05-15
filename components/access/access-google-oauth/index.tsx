@@ -1,6 +1,5 @@
 import { client_login_google_oauth } from "@/data/contexts/client";
 import useLoading from "@/data/hooks/useLoading";
-import ClientDTO from "@/data/types/client";
 import LoadComponent from "@/layout/load";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
@@ -23,7 +22,7 @@ export default function AccessGoogleComponent() {
             const response = await client_login_google_oauth(data);
 
             if (response.authenticated) {
-                toast.info("Seja bem vindo(a)! ")
+                window.location.href = "/access/user"
             } 
         } catch (error: any) {
             console.error(error);

@@ -150,13 +150,16 @@ body {
     z-index: 50;
     display: flex;
     /* flex-direction: column; */
-    /* justify-items: center;
+    justify-items: center;
     align-items: center;
-    place-items: center; */
+    place-items: center;
 }
 ._modal_fixed {
 
     position: fixed;
+}
+._modal_background {
+    background-color: #000000a2;
 }
 ._modal {
     /* position: absolute;

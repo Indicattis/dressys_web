@@ -39,18 +39,33 @@ export default function UserProfile({ client_name,  client_mail, online}: UserPr
                 <div className={`rounded-full w-16 bg-gray border-2  overflow-hidden ${online ? "border-green-400" : "border-blue"}`}>
                     <Image width={200} height={200} alt="user-profile" src={`/gif/Female Avatar.gif`}></Image>
                 </div>
+                {online ? (
                 <div className="flex flex-col w-full">
                     <h3>{client_name}</h3>
                     <span className="text-blue text-xs flex items-center">{client_mail}
-                    {online && <span className="flex items-center text-xs font-jetbrains"><IconPoint color="rgb(74 222 128)"/>online</span>}
+                    <span className="flex items-center text-xs font-jetbrains"><IconPoint color="rgb(74 222 128)"/>online</span>
                     </span>
                 </div>
+                ) : (
+                    
+                <div className="flex flex-col w-full">
+                    <span className="flex items-center text-xs font-jetbrains"><IconPoint color="rgb(239 68 68)"/>offline</span>
+                </div>
+                )}
+                {online ? (
                 <div className="relative" onClick={() => setShowOpt(!showOpt)}>
                     <IconDots/>
                     {showOpt && <UserProfileDropdown onClose={action}/>}
                 </div>
+                ) : (
+                <div className="relative" onClick={() => setShowOpt(!showOpt)}>
+                    <DefaultButton variant="darkPink" rounded="md" wide="md" onClick={() => window.location.href = "/access"}>
+                        Acesso
+                    </DefaultButton>
+                </div>
+                )}
             </div>
-                    {logout && (<DefaultModal onClose={action}/>)}
+            {logout && (<DefaultModal modal_legend="Tem certeza que deseja sair?" onClose={action}/>)}
         </div>
     )
 }
