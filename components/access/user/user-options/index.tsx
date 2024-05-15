@@ -13,7 +13,7 @@ import { IconArrowNarrowRight } from "@tabler/icons-react";
 export default function UserOptions() {
     
     return (
-        <motion.ul
+        <div
         className="relative w-full h-[410px] max-w-[410px]">
             <OptionCase position={1} description="Meus agendamentos" legend="Monitore seus passos">
             </OptionCase>
@@ -23,7 +23,7 @@ export default function UserOptions() {
             </OptionCase>
             <OptionCase position={4} description="Ajuda" legend="Tire suas dúvidas!">
             </OptionCase>
-        </motion.ul>
+        </div>
     )
 }
 
@@ -39,11 +39,11 @@ function OptionCase({ position, description, legend}: OptionCaseProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <motion.li 
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0 }}
-        transition={{ type: "spring",stiffness: 260, damping: 45, delay: position/10 }}
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ delay: position/5 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
             className={`absolute p-3 transition-all
@@ -83,6 +83,6 @@ function OptionCase({ position, description, legend}: OptionCaseProps) {
                     </motion.div>
                 )}
             </motion.div>
-        </motion.li>
+        </motion.div>
     )
 }

@@ -5,11 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import MessagesComponent from "@/components/inc/header/messages";
+import { useUserToken } from "@/data/hooks/useSession";
 
 export default function Header() {
     const [returnButton, setReturn] = useState<boolean>(false)
     const [search, setSearch] = useState<boolean>(false)
     const [messages, showMessages] = useState<boolean>(false)
+    const { UserLoged } = useUserToken();
 
     useEffect(() => {
         if(search || messages) {
@@ -74,7 +76,7 @@ export default function Header() {
                     onClick={() => showMessages(!messages)}>
                         <IconBellRinging width={35} hanging={35} color={messages ? "#F5618B" : "white"}/>
                     </div>
-                    <div className="min-w-10">
+                    <div className={`rounded-full border-2 ${UserLoged ? "border-pink" : "border-gray"}`}>
                         <Image alt="profile" width={35} height={35} src={`/gif/Female Avatar.gif`}></Image>
                     </div>
                 </div>

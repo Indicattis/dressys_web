@@ -3,6 +3,7 @@ import { IconDots, IconLogout2, IconPoint, IconSettings } from "@tabler/icons-re
 import Image from "next/image"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import DefaultModal from "@/layout/modals"
 
 interface UserProps {
     online?: boolean
@@ -14,9 +15,26 @@ interface UserProps {
 export default function UserProfile({ client_name,  client_mail, online}: UserProps) {
 
     const [showOpt, setShowOpt] = useState<boolean>(false)
+    const [logout, setLogout] = useState<boolean>(false)
+
+    const action = (response:any) => {
+        if(response == 1) { //CANCELA OPERAÇÃO DO MODAL
+            setLogout(false)
+            setShowOpt(false)
+        } else if (response == 2) { //CONFIRMA A OPERAÇÃO DO MODAL
+            console.log(response)
+        } else if (response == 3){ //ABRE MODAL DE LOGOUT
+            setLogout(true)
+        } else if (response == 4){ //REDIRECIONAMENTO PARA CONFIGURAÇÕES DA CONTA
+            console.log(response)
+        } else { // RETURN
+            setLogout(false)
+            setShowOpt(false)
+        }
+    }
 
     return (
-        <div className="w-full p-3">
+        <div className="w-full p-3 relative">
             <div className="flex gap-3 items-center justify-between w-full p-2 rounded-lg hover:bg-gray">
                 <div className={`rounded-full w-16 bg-gray border-2  overflow-hidden ${online ? "border-green-400" : "border-blue"}`}>
                     <Image width={200} height={200} alt="user-profile" src={`/gif/Female Avatar.gif`}></Image>
@@ -27,35 +45,30 @@ export default function UserProfile({ client_name,  client_mail, online}: UserPr
                     {online && <span className="flex items-center text-xs font-jetbrains"><IconPoint color="rgb(74 222 128)"/>online</span>}
                     </span>
                 </div>
-                <div onClick={() => setShowOpt(!showOpt)}>
+                <div className="relative" onClick={() => setShowOpt(!showOpt)}>
                     <IconDots/>
+                    {showOpt && <UserProfileDropdown onClose={action}/>}
                 </div>
-                {showOpt && <UserProfileDropdown onClose={() => setShowOpt(false)}/>}
             </div>
+                    {logout && (<DefaultModal onClose={action}/>)}
         </div>
     )
 }
 
 interface DropdownProps {
-    onClose: () => void;
+    onClose: (response: any) => void;
 }
 
 function UserProfileDropdown({onClose}: DropdownProps) {
 
 
     return (
-        <div className="fixed bottom-0 left-0 right-0  h-screen z-50 flex flex-col justify-end ">
-            <div className="bg-[#000000a2] h-full" onClick={onClose}>
-            </div>
-            <motion.div 
-            initial={{y: 100}}
-            animate={{y: 0}}
-            exit={{y: 100}}
-            transition={{type: "spring",stiffness: 160, damping: 35,}}
-            className="absolute bottom-0 left-0 w-full p-3 bg-gray flex justify-center gap-3">
-                <DefaultButton rounded="full" wide="lg" variant="darkPink"><IconLogout2></IconLogout2>Sair</DefaultButton>
-                <DefaultButton rounded="full" wide="lg" variant="blue"><IconSettings></IconSettings>Configurações</DefaultButton>
-            </motion.div>
-        </div>
+        <motion.div 
+        initial={{y: -10, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        className="absolute top-full right-0 bg-dark p-3 rounded-xl z-40 flex flex-col gap-3 shadow-md shadow-gray">
+            <DefaultButton variant="blue" wide="md" rounded="full" onClick={() => onClose(4)}>Configurações</DefaultButton >
+            <DefaultButton variant="darkPink" rounded="full" wide="md" onClick={() => onClose(3)}>Logout</DefaultButton >
+        </motion.div>
     )
 }

@@ -2,6 +2,8 @@ import { UNSPLASH_LINK } from "@/layout/basics";
 import { IconEye, IconMail, IconMailOpened, IconTrash } from "@tabler/icons-react";
 import Image from "next/image";
 import { motion, useDragControls } from "framer-motion";
+import { useState } from "react";
+import DefaultModal from "@/layout/modals";
 
 
 interface MessageProps {
@@ -12,6 +14,30 @@ interface MessageProps {
   }
 
 export default function Message({ message_opened, message_text, message_data, message_type }: MessageProps) {
+
+    const [exclude, setExclude] = useState<boolean>(false)
+    const [open, setOpen] = useState<boolean>(false)
+
+
+    const onExclude = (response: any) => {
+        if (response == 1) {
+            setExclude(false)
+        } else if( response == 2) {
+            console.log(response)
+        } else {
+            setExclude(false)
+        }
+    }
+    const onOpen = (response: any) => {
+        if (response == 1) {
+            console.log(response)
+        } else if( response == 2) {
+            console.log(response)
+        } else {
+            setOpen(false)
+        }
+    }
+
     return (
         <motion.div
         className={`w-full flex gap-3 h-24 relative bg-gradient-primary rounded-lg overflow-hidden
@@ -40,8 +66,15 @@ export default function Message({ message_opened, message_text, message_data, me
                     <div className="text-xs text-nowrap px-2">ha {message_data.slice(0, 6)}...</div>
                 </div>
             </motion.div>
-            <div className="absolute text-white flex justify-center items-center w-[100px] h-full  left-0 z-10"><IconEye width={50} height={50}></IconEye></div>
-            <div className="absolute text-white flex justify-center items-center w-[100px] h-full  right-0 z-10"><IconTrash width={50} height={50}></IconTrash></div>
+            <div onClick={() => setOpen(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  left-0 z-10"><IconEye width={35} height={35}></IconEye></div>
+            <div onClick={() => setExclude(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  right-0 z-10"><IconTrash width={35} height={35}></IconTrash></div>
+
+            {exclude && (
+                <DefaultModal onClose={onExclude}></DefaultModal>
+            )}
+            {open && (
+                <DefaultModal onClose={onOpen}></DefaultModal>
+            )}
         </motion.div>
     )
 }
