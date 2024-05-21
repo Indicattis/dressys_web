@@ -29,7 +29,11 @@ import DefaultButton from "@/layout/button/button";
 import useLoading from "@/data/hooks/useLoading";
 import LoadComponent from "@/layout/load";
 
-export default function AccessSignComponent() {
+interface LoginProps {
+    mailAlreadyExists: (mail: string) => void;
+}
+
+export default function AccessSignComponent({mailAlreadyExists}: LoginProps) {
     const { loading, loadInit, loadEnd } = useLoading();
     const { register, handleSubmit } = useForm<ClientDTO>();
     const [phone, setPhone] = useState<string>("");
@@ -54,6 +58,7 @@ export default function AccessSignComponent() {
         } catch (error: any) {
             console.error(error);
             toast.error("Erro! "+ error.message);
+            mailAlreadyExists(email)
         } finally {
             loadEnd();
         }

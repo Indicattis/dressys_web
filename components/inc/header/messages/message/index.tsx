@@ -40,7 +40,7 @@ export default function Message({ message_opened, message_text, message_data, me
 
     return (
         <motion.div
-        className={`w-full flex gap-3 h-24 relative bg-gradient-primary rounded-lg overflow-hidden
+        className={`w-full flex h-16 relative bg-transparent rounded-xl overflow-hidden
         ${message_opened ? "  text-blue" : " text-white"}`}>
             <motion.div 
         drag="x"
@@ -51,11 +51,11 @@ export default function Message({ message_opened, message_text, message_data, me
             right: 100,
             bottom: 0,
           }}
-        className="flex items-center bg-gray rounded-lg overflow-hidden z-20 shadow-lg shadow-gray w-full gap-3 border border-gray">
+        className="flex items-center bg-dark rounded overflow-hidden z-20 shadow-xl shadow-gray h-full w-full gap-3">
                 <div>
                     <Image width={200} height={200} src={`${UNSPLASH_LINK}/200x200?${message_type}`} alt="message" />
                 </div>
-                <div className={`w-full`}>{message_text.slice(0, 35)}...</div>
+                <div className={`w-full text-sm`}>{message_text.slice(0, 35)}...</div>
                 <div className="">
                 <div className="flex flex-col items-center">
                     {!message_opened ? (
@@ -66,9 +66,10 @@ export default function Message({ message_opened, message_text, message_data, me
                     <div className="text-xs text-nowrap px-2">ha {message_data.slice(0, 6)}...</div>
                 </div>
             </motion.div>
-            <div onClick={() => setOpen(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  left-0 z-10"><IconEye width={35} height={35}></IconEye></div>
-            <div onClick={() => setExclude(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  right-0 z-10"><IconTrash width={35} height={35}></IconTrash></div>
-
+            <div className=" bg-gradient-primary top-[2px] h-[95%] w-full absolute">
+                <div onClick={() => setOpen(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  left-0 z-10"><IconEye width={35} height={35}></IconEye></div>
+                <div onClick={() => setExclude(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  right-0 z-10"><IconTrash width={35} height={35}></IconTrash></div>
+            </div>
             {exclude && (
                 <DefaultModal onClose={onExclude}></DefaultModal>
             )}

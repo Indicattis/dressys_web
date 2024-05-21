@@ -17,10 +17,10 @@ const config: Config = {
       },
       
       colors: {
-        blue: "#928899",
+        blue: "#5d5761",
         pink: "#F5618B",
         sweetPink: "#f79db6",
-        dark: "#1A1B1E",
+        dark: "#131313",
         gray: "#242424",
       },
       fontFamily: {

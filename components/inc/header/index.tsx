@@ -28,7 +28,7 @@ export default function Header() {
     }
 
     return (
-        <header className=" w-full bg-dark border-b border-gray text-white relative">
+        <header className=" w-full bg-black text-white relative">
             <nav className="flex items-center gap-2 p-3 w-full justify-between relative">
                 <div 
                 className="flex gap-3 items-start"

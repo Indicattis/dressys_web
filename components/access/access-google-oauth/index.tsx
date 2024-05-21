@@ -6,9 +6,11 @@ import { jwtDecode } from "jwt-decode";
 import { toast } from "react-toastify";
 
 
+interface AccessProps {
+    userNotExist: (mail: string) => void;
+}
 
-
-export default function AccessGoogleComponent() {
+export default function AccessGoogleComponent({userNotExist}: AccessProps) {
     const { loading, loadInit, loadEnd } = useLoading();
 
     const oAuthSuccess = async (response: any) => {
@@ -27,6 +29,8 @@ export default function AccessGoogleComponent() {
         } catch (error: any) {
             console.error(error);
             toast.info("Aviso! "+ error.message);
+            userNotExist(decodedToken.email)
+            
         } finally {
             loadEnd();
         }

@@ -12,7 +12,12 @@ import useLoading from "@/data/hooks/useLoading";
 import LoadComponent from "@/layout/load";
 import { handleEmailChange } from "@/utils/formatter";
 
-export default function AccessLoginComponent() {
+
+interface LoginProps {
+    mailAlreadyExists?: string;
+}
+
+export default function AccessLoginComponent({mailAlreadyExists}: LoginProps) {
     const { loading, loadInit, loadEnd } = useLoading();
     const { register, handleSubmit } = useForm<ClientDTO>();
     const [isLocal, setLocal] = useState<boolean>(false)
@@ -58,7 +63,7 @@ export default function AccessLoginComponent() {
                         handleEmailChange(event, setEmail, setMailErrorMessage)
                     }
                     placeholder="E-mail"
-                    value={email}
+                    value={mailAlreadyExists ? mailAlreadyExists : email}
                     type="text"
                     required
                     className={`_input ${

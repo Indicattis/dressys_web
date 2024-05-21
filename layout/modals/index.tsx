@@ -26,7 +26,7 @@ export default function DefaultModal({onClose, modal_legend}: ModalProps) {
             animate={{y: 0}}
             exit={{y: 100}}
             transition={{type: "spring",stiffness: 260, damping: 35,}}
-            className="absolute bottom-0 w-full p-3 flex flex-col items-center gap-3 bg-gray"
+            className="absolute bottom-0 w-full p-3 flex flex-col items-center gap-3 bg-dark"
             >
                 <div className="text-white text-xl">{modal_legend ? modal_legend : "Tem certeza que deseja continuar?"}</div>
                 <div className="flex flex-col gap-3 p-3">

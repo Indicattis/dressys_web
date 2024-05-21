@@ -12,6 +12,14 @@ import LogoComponent from "../inc/header/logo";
 
 export default function AccessComponent() {
     const [model, setModel] = useState<number>(1)
+
+    const userAlreadyExists = () => {
+        setModel(1)
+    }
+    const userNotExists = () => {
+        setModel(2)
+    }
+
     return (
         <section className="flex flex-col items-center gap-3 overflow-hidden  w-full">
             <LogoComponent color={model == 1 ? "blue" : "pink"}></LogoComponent>
@@ -26,9 +34,9 @@ export default function AccessComponent() {
             <div className="flex flex-col w-[500px] gap-3 items-center p-3 justify-center max-md:w-full">
             
                 {model == 1 && <AccessLoginComponent/>}
-                {model == 2 && <AccessSignComponent/>}
+                {model == 2 && <AccessSignComponent mailAlreadyExists={userAlreadyExists}/>}
                 <AccessDivision/>
-                <AccessGoogleComponent/>
+                <AccessGoogleComponent userNotExist={userNotExists}/>
             </div>
         </section>
     )
