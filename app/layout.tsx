@@ -17,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
         <body className={`font-norms text-white bg-black`}>
-            <Header/>
             {children}
             </body>
     </html>

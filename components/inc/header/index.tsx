@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 import MessagesComponent from "@/components/inc/header/messages";
 import { useUserToken } from "@/data/hooks/useSession";
 
-export default function Header() {
+interface HeaderProps {
+    menu: string;
+}
+
+export default function Header({menu}: HeaderProps) {
     const [returnButton, setReturn] = useState<boolean>(false)
     const [search, setSearch] = useState<boolean>(false)
     const [messages, showMessages] = useState<boolean>(false)
@@ -46,16 +50,7 @@ export default function Header() {
                     
                 </div>
                 <div className="absolute w-64 left-12">
-                {!search && (
-                    <h1
-                    className={`font-hunters text-2xl transition-all `}> 
-                    {messages && "Mensagens"}
-                    {search && null}
-                    {!messages && !search && "Dressys"}
-                    
-                    </h1>
-                )}
-                {search &&
+                {search ?
                     (
                         <motion.input
                         initial={{width: "0%"}}
@@ -67,6 +62,10 @@ export default function Header() {
                         className="_input h-8" 
                         autoFocus
                         />
+                    ) : (
+                        <h1
+                            className={`font-hunters text-3xl transition-all `}> {menu ? menu : "Dressys"}
+                        </h1>
                     )
                 }
                 </div>

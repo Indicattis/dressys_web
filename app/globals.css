@@ -129,6 +129,10 @@ body {
     border: 1px solid rgb(93 87 97);
     color: rgb(93 87 97);
 }
+._button._darkPink {
+    border: 1px solid rgb(245 97 139 );
+    color: rgb(245 97 139 );
+}
 
 .tooltip {
     position: absolute;
@@ -196,11 +200,12 @@ body {
 }
 ._button._medium {
     height: 2rem;
-    width: 8rem;
+    width: 6rem;
 }
 ._button._small {
     height: 2rem;
-    width: 4rem;
+    font-size: 12px;
+    width: 3.5rem;
 }
 ._button._pink {
     background: linear-gradient(to top, #F5618B, #f79db6);

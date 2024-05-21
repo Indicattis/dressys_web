@@ -11,7 +11,7 @@ interface DefaultButtonProps {
 export default function DefaultButton({children, variant, onClick, type, wide, rounded}: DefaultButtonProps) {
     return (
         <button type={type} onClick={onClick} className={`
-        _button shadow-lg shadow-gray
+        _button shadow-lg shadow-dark
         transition-all text-base
         flex justify-center items-center gap-2
         ${rounded == "sm" ? "rounded-sm" : ""}
@@ -27,7 +27,7 @@ export default function DefaultButton({children, variant, onClick, type, wide, r
         ${variant == "default" ? ` text-gray bg-text ` : ""}
         ${variant == "blue" ? ` _blue` : ""}
         ${variant == "pink" ? ` text-white bg-gradient-to-t from-pink to-sweetPink _pink` : ""}
-        ${variant == "darkPink" ? ` text-pink bg-gray border border-pink` : ""}
+        ${variant == "darkPink" ? ` text-pink  _darkPink` : ""}
         ${variant == "darkBlue" ? `font-normal text-white bg-blue border border-blue` : ""}
         `}>
             {children}

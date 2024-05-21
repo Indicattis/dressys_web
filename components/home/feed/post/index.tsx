@@ -1,4 +1,5 @@
 import { UNSPLASH_LINK } from "@/layout/basics";
+import DefaultButton from "@/layout/button/button";
 import { IconBookmark, IconCut, IconDots, IconStar, IconStarFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -31,23 +32,26 @@ export default function PostComponent({establishment}: PostProps) {
                         <Image width={1000} height={1000} alt="" src={UNSPLASH_LINK+`/900x900?beauty`}></Image>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="flex gap-2 w-full">
+                <div className="flex  items-center justify-between">
+                    <div>
+                        <DefaultButton wide="sm" rounded="md" variant="darkPink">Visitar</DefaultButton>
+                    </div>
+                    <div className="flex gap-3 text-blue text-sm items-center">
                         <div className="flex gap-1 items-center">
-                            <div className="w-6 h-6">
-                                <Image color="white" width={25} height={25} alt="test" src={`/icon/service-nail.png`}/>
+                            <div className="">
+                                <Image width={16} height={16} alt="test" src={`/icon/service-nail.png`}/>
                             </div>
                             <span>22</span>
                         </div>
-                        <div className="flex gap-1">
-                            <div className="w-6 h-6">
-                                <Image color="white" width={25} height={25} alt="test" src={`/icon/service-ped.png`}/>
+                        <div className="flex gap-1 items-center">
+                            <div className="">
+                                <Image color="white" width={16} height={16} alt="test" src={`/icon/service-ped.png`}/>
                             </div>
                             <span>13</span>
                         </div>
-                        <div className="flex gap-1">
-                            <div className="w-6 h-6">
-                                <Image color="white" width={25} height={25} alt="test" src={`/icon/service-hair.png`}/>
+                        <div className="flex gap-1 items-center">
+                            <div className="">
+                                <Image color="white" width={16} height={16} alt="test" src={`/icon/service-hair.png`}/>
                             </div>
                             <span>95</span>
                         </div>
