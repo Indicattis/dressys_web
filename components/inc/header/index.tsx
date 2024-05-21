@@ -32,7 +32,7 @@ export default function Header({menu}: HeaderProps) {
     }
 
     return (
-        <header className=" w-full bg-black text-white relative">
+        <header className=" w-full bg-black text-white relative z-50">
             <nav className="flex items-center gap-2 p-3 w-full justify-between relative">
                 <div 
                 className="flex gap-3 items-start"
@@ -80,7 +80,7 @@ export default function Header({menu}: HeaderProps) {
                     </div>
                 </div>
                 {messages ? (
-                    <MessagesComponent/>
+                    <MessagesComponent  onClose={returnDefault}/>
                 ) : ""}
             </nav>
         </header>
