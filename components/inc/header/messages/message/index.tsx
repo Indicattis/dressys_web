@@ -40,7 +40,7 @@ export default function Message({ message_opened, message_text, message_data, me
 
     return (
         <motion.div
-        className={`w-full flex h-16 relative bg-transparent rounded-xl overflow-hidden
+        className={`w-full flex h-16 justify-center relative bg-transparent rounded-xl overflow-hidden
         ${message_opened ? "  text-blue" : " text-white"}`}>
             <motion.div 
         drag="x"
@@ -51,7 +51,7 @@ export default function Message({ message_opened, message_text, message_data, me
             right: 100,
             bottom: 0,
           }}
-        className="flex items-center bg-dark rounded overflow-hidden z-20 shadow-xl shadow-gray h-full w-full gap-3">
+        className="flex items-center bg-dark rounded overflow-hidden z-20 h-full w-full gap-3">
                 <div>
                     <Image width={200} height={200} src={`${UNSPLASH_LINK}/200x200?${message_type}`} alt="message" />
                 </div>
@@ -66,7 +66,7 @@ export default function Message({ message_opened, message_text, message_data, me
                     <div className="text-xs text-nowrap px-2">ha {message_data.slice(0, 6)}...</div>
                 </div>
             </motion.div>
-            <div className=" bg-gradient-primary top-[2px] h-[95%] w-full absolute">
+            <div className=" bg-gradient-primary top-[2px] h-[95%] w-[98%] absolute rounded-xl">
                 <div onClick={() => setOpen(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  left-0 z-10"><IconEye width={35} height={35}></IconEye></div>
                 <div onClick={() => setExclude(true)} className="absolute text-white flex justify-center items-center w-[100px] h-full  right-0 z-10"><IconTrash width={35} height={35}></IconTrash></div>
             </div>

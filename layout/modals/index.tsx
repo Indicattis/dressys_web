@@ -1,7 +1,6 @@
 
 import { motion } from "framer-motion";
 import DefaultButton from "../button/button";
-import { IconLogout2, IconSettings } from "@tabler/icons-react";
 
 
 

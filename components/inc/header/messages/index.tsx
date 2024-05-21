@@ -13,14 +13,16 @@ export default function MessagesComponent() {
 
     return (
         <motion.div
-        initial={{ opacity: 0, x: 120 }} 
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 120 }}
-        className="absolute z-50 top-full right-0 bg-black w-[400px] h-screen flex flex-col gap-3 p-2 max-md:w-full shadow-lg shadow-gray border-t border-gray">
-            <div className="flex gap-3">
+        initial={{ opacity: 0, y: -120 }} 
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -120 }}
+        className="absolute z-50 top-full right-0 bg-black w-[400px] max-md:w-full shadow-xl shadow-dark rounded-md overflow-hidden">
+            <div className="flex gap-3 p-3 bg-black">
                 <DefaultButton wide="md" rounded="full" variant={filter === 1 ? "pink" : "blue"} onClick={() => setFilter(1)}> #lidas </DefaultButton>
                 <DefaultButton wide="md" rounded="full" variant={filter === 2 ? "pink" : "blue"} onClick={() => setFilter(2)}> #não lidas </DefaultButton>
             </div>
+            <div className=" flex flex-col items-start justify-start p-2 gap-3">
+                
             {Messages.map((message, index) => {
                 if (filter === 0 || (filter === 1 && message.message_opened) || (filter === 2 && !message.message_opened)) {
                     return (
@@ -42,6 +44,11 @@ export default function MessagesComponent() {
                     return null;
                 }
             })}
+            </div>
+            <div className=" w-full flex gap-3 justify-center bg-gray p-3">
+                <DefaultButton wide="md" rounded="full" variant="darkBlue"> #limpar </DefaultButton>
+                <DefaultButton wide="md" rounded="full" variant="pink"> #voltar </DefaultButton>
+            </div>
         </motion.div>
     )
 }

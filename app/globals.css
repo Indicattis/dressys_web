@@ -66,7 +66,7 @@ body {
     min-height: 100vh;
     background-repeat: no-repeat;
     background: black;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -87,7 +87,7 @@ body {
     padding: 0.75rem;
     width: 100%;
     background-color: #131313;
-    border: 1px solid #242424;
+    border: 1px solid #131313;
     outline: none;
     transition: all 0.2s;
     /* box-shadow: 0 1px 5px 0 #242424; */
@@ -96,11 +96,12 @@ body {
     color: #fff;
 }
 ._input::placeholder {
-    color: #524c56;
+    color: #242424;
+    font-size: 14px;
 }
 ._input:focus {
     transition: all 0.2s;
-    border: 1px solid #f5618b;
+    border: 1px solid #242424;
 }
 
 /* ._input_icon {
@@ -113,7 +114,7 @@ body {
 
 ._input_icon_2 {
     position: absolute;
-    color: #524c56;
+    color: #242424;
     right: 0;
     top: 0;
     padding: 0.5rem;
@@ -123,6 +124,10 @@ body {
     position: relative;
     width: 100%;
     border-radius: 0.5rem;
+}
+._button._blue {
+    border: 1px solid rgb(93 87 97);
+    color: rgb(93 87 97);
 }
 
 .tooltip {
