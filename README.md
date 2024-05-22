@@ -2,7 +2,7 @@
 # Sistema de Gerenciamento de Salão de Beleza
 Bem-vindo! Este aplicativo web foi projetado para facilitar a administração do seu salão de beleza, bem como proporcionar aos clientes uma forma fácil e conveniente de encontrar estabelecimentos próximos e agendar serviços online. A ideia se baseia em uma interface amigável onde é possível encontrar, experimentar e avaliar estabelecimentos de maneira ágil e simples. As tecnologias utilizadas permitem que o cliente possa visualizar um estabelecimento próximo com um clique e agendar um horário com base nos serviços prestados pelo mesmo e o tempo de atendimento, tudo de maneira organizada e segura.
 
-- [HOMOLOGAÇÃO](https://dressys-web.vercel.app) - Interface homologada
+- [Vercel](https://dressys-web.vercel.app) - Interface homologada
 
 ## Funcionalidades
 * Para Administradores de Salão
@@ -28,26 +28,24 @@ Bem-vindo! Este aplicativo web foi projetado para facilitar a administração do
 >Histórico de Agendamentos: Consulte seu histórico de agendamentos e repita serviços com facilidade.
 
 * Tecnologias Utilizadas
-[Frontend]: React.js
-[Backend]: Node.js com Prisma
-[Banco] de Dados: Mysql
+[Interface]: React.js
 [Autenticação]: JWT (JSON Web Tokens)
 [Geolocalização]: API do Google Maps para localizar salões próximos
+[Deploy]: Vercel
 
 * Como Rodar o Projeto
 Pré-requisitos
 Node.js e npm instalados
-Mysql configurado
-
+Conexão com a internet
 
 ```bash
+git clone https://github.com/Indicattis/dressys_web.git
+# 
+npm install
+# 
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 
+http://localhost:3000
 ```
 
-- [TESTE](http://localhost:3000) - Teste local.
+Confira o [servidor](https://github.com/Indicattis/dressys_api) onde o backend está montado!
