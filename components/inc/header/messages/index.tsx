@@ -25,7 +25,7 @@ export default function MessagesComponent({onClose}: MessagesProps) {
                 <DefaultButton wide="md" rounded="full" variant={filter === 1 ? "pink" : "blue"} onClick={() => setFilter(1)}> #lidas </DefaultButton>
                 <DefaultButton wide="md" rounded="full" variant={filter === 2 ? "pink" : "blue"} onClick={() => setFilter(2)}> #não lidas </DefaultButton>
             </div>
-            <div className=" flex flex-col items-start justify-start p-2 gap-3 h-[600px] overflow-y-auto">
+            <div className=" flex flex-col items-start justify-start p-2 gap-3 h-[700px] overflow-y-auto">
                 
             {Messages.map((message, index) => {
                 if (filter === 0 || (filter === 1 && message.message_opened) || (filter === 2 && !message.message_opened)) {
@@ -49,11 +49,11 @@ export default function MessagesComponent({onClose}: MessagesProps) {
                 }
             })}
             </div>
-            <div className=" w-full flex gap-3 justify-center bg-dark p-3">
+            <div className=" w-full flex gap-3 justify-center bg-gray p-3">
                 <DefaultButton wide="md" rounded="full" variant="darkBlue"> #limpar </DefaultButton>
                 <DefaultButton wide="md" rounded="full" variant="pink" onClick={onClose}> #voltar </DefaultButton>
             </div>
         </motion.div>
     )
-}
+} 
 

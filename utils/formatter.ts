@@ -110,7 +110,7 @@ export const checkPasswordStrength = async (
 export const checkRepeatPassword = async (
   event: React.ChangeEvent<HTMLInputElement>,
   password: any,
-  setErrorMessage: any
+  setErrorMessage: any,
 ) => {
   const value = event.target.value;
 

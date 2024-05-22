@@ -39,7 +39,7 @@
     font-style: normal;
 }
 @font-face {
-    font-family: "norms";
+    font-family: "norms-thin";
     src: url("../public/fonts/TT\ Norms\ Pro\ Thin.otf");
     font-weight: thin;
     font-style: thin;
@@ -86,24 +86,22 @@ body {
     /* border-left: 3px solid #4F7D95; */
     padding: 0.75rem;
     width: 100%;
-    background-color: #131313;
-    border: 1px solid #131313;
     outline: none;
+    background-color: #131313;
     transition: all 0.2s;
     /* box-shadow: 0 1px 5px 0 #242424; */
-    border-radius: 0.50rem;
     font-size: 0.75rem;
     color: #fff;
+    border: 1px solid #131313;
+    border-radius: 0.75rem;
 }
 ._input::placeholder {
-    color: #242424;
-    font-size: 14px;
+    color: #5d5761;
+    font-size: 0.75rem;
 }
 ._input:focus {
-    transition: all 0.2s;
-    border: 1px solid #242424;
+    border: 1px solid #5d5761;
 }
-
 /* ._input_icon {
   position: absolute;
   color: #4F7D95;
@@ -113,17 +111,19 @@ body {
 } */
 
 ._input_icon_2 {
-    position: absolute;
-    color: #242424;
-    right: 0;
-    top: 0;
+    color: #F5618B;
     padding: 0.5rem;
+    /* background: linear-gradient(#f79db6, #F5618B); */
 }
 
 ._input_wide {
     position: relative;
+    display: flex;
+    gap: 3px;
+    flex-direction: row-reverse;
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
 }
 ._button._blue {
     border: 1px solid rgb(93 87 97);

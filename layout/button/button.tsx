@@ -11,7 +11,7 @@ interface DefaultButtonProps {
 export default function DefaultButton({children, variant, onClick, type, wide, rounded}: DefaultButtonProps) {
     return (
         <button type={type} onClick={onClick} className={`
-        _button shadow-lg shadow-dark
+        _button capitalize
         transition-all text-base
         flex justify-center items-center gap-2
         ${rounded == "sm" ? "rounded-sm" : ""}

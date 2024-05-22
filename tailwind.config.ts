@@ -27,7 +27,8 @@ const config: Config = {
         'poppins': ['Poppins', 'sans-serif'],
         'hunters': ['hunters', 'sans-serif'],
         'jetbrains': ['jetbrains', 'sans-serif'],
-        'norms': ['norms', 'sans-serif']
+        'norms': ['norms', 'sans-serif'],
+        'norms-thin': ['norms-thin', 'sans-serif']
       },
     },
   },

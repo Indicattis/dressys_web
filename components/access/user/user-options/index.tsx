@@ -14,14 +14,14 @@ export default function UserOptions() {
     
     return (
         <div
-        className="relative w-full h-[410px] max-w-[410px]">
-            <OptionCase position={1} description="Meus agendamentos" legend="Monitore seus passos">
+        className="relative w-full h-[410px] max-w-[410px] ">
+            <OptionCase position={1} description="locais" legend={["catálogo", "novos"]}>
             </OptionCase>
-            <OptionCase position={2} description="Informações da conta" legend="Edite e controle suas informações">
+            <OptionCase position={2} description="conta" legend={["cadastro", "senha"]}>
             </OptionCase>
-            <OptionCase position={3} description="Minhas Experiencias" legend="Avalie e observe suas atividades">
+            <OptionCase position={3} description="agenda" legend={["histórico", "Agenda"]}>
             </OptionCase>
-            <OptionCase position={4} description="Ajuda" legend="Tire suas dúvidas!">
+            <OptionCase position={4} description="ajuda" legend={["ajuda", "contato", "políticas"]}>
             </OptionCase>
         </div>
     )
@@ -31,7 +31,7 @@ export default function UserOptions() {
 interface OptionCaseProps {
     position: number;
     description: string;
-    legend?: string
+    legend?: string[]
 }
 
 function OptionCase({ position, description, legend}: OptionCaseProps) {
@@ -55,11 +55,11 @@ function OptionCase({ position, description, legend}: OptionCaseProps) {
             `}
             >
             <motion.div 
-            className="scale-105 rounded-xl h-full w-full overflow-hidden relative shadow-lg shadow-gray">
+            className="scale-105 rounded-xl h-full w-full overflow-hidden relative  flex justify-center items-center">
                 <Image width={1000} height={1000} alt="option" src={UNSPLASH_LINK+"/450x450?"+description}></Image>
-                <div className={`transition-all absolute -bottom-1 z-10 w-full  ${isOpen ? "bg-gray h-24" : "bg-[#000000a1] h-[110%]"}`}>
+                <div className={`transition-all absolute -bottom-1 z-10 w-full  ${isOpen ? "bg-dark h-24" : "bg-[#000000a1] h-[110%]"}`}>
                 </div>
-                <div className={`absolute z-20 transition-all  ${isOpen ? "text-xl p-5 bottom-5" : "text-normal p-2 bottom-0"}`}>
+                <div className={`absolute z-20 transition-all capitalize font-norms  ${isOpen ? "text-xl p-5 opacity-0" : "text-normal p-2 opacity-75"}`}>
                     {description}
                 </div>
                 {isOpen && (
@@ -68,18 +68,12 @@ function OptionCase({ position, description, legend}: OptionCaseProps) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ delay: 0.1 }}
-                    className={`absolute z-20 bottom-0 transition-all text-blue text-base p-5`}>
-                        {legend}
-                    </motion.div>
-                )}
-                {isOpen && (
-                    <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className={`absolute z-30 right-0 transition-all bottom-5 p-3`}>
-                        <DefaultButton wide="sm" rounded="md" variant="darkPink"><IconArrowNarrowRight/></DefaultButton>
+                    className={`absolute font-norms-thin z-20 bottom-3 left-0 transition-all text-blue text-lg p-5 flex gap-3 `}>
+                        {legend && legend.map((itam) => {
+                            return (
+                                <DefaultButton variant="darkPink" wide="md">{itam}</DefaultButton>
+                            )
+                        })}
                     </motion.div>
                 )}
             </motion.div>

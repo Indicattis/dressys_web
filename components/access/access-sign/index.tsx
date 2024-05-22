@@ -46,23 +46,40 @@ export default function AccessSignComponent({mailAlreadyExists}: LoginProps) {
 
     const onSubmit = async (data: ClientDTO) => {
         loadInit();
+        
+        // Atualiza os campos do objeto data
         data.client_birthday = convertToISOString(birth);
         data.client_phone = phone;
         data.client_password = password;
         data.client_mail = email;
+        console.log(passErrorMessage)
+
+        if (passErrorMessage == 4) {
+            toast.error("As senhas não conferem");
+            loadEnd(); 
+            return;
+        }
+        if(mailErrorMessage !== "") {
+            toast.error("E-mail inválido");
+            loadEnd(); 
+            return;
+        }
         try {
             const response = await client_sign(data);
-            if (response != undefined) {
-                toast.info("Usuário cadastrado com sucesso! ");
+            if (response !== undefined) {
+                toast.info("Usuário cadastrado com sucesso!");
             }
         } catch (error: any) {
             console.error(error);
-            toast.error("Erro! "+ error.message);
-            mailAlreadyExists(email)
+            toast.error("Erro! " + (error.message || "Erro desconhecido"));
+            mailAlreadyExists(email); // Função específica para tratar email já existente
         } finally {
             loadEnd();
         }
-    };
+        }
+        
+    
+    
 
     return (
         <form
@@ -225,7 +242,7 @@ export default function AccessSignComponent({mailAlreadyExists}: LoginProps) {
                 </TooltipComponent>
             </motion.div>
             <motion.div
-                className={`_input_wide flex h-8 w-full`}
+                className={` flex h-8 w-full`}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
@@ -239,7 +256,7 @@ export default function AccessSignComponent({mailAlreadyExists}: LoginProps) {
                     {passErrorMessage == 5 ? (
                         <IconLockCheck color="rgb(34, 197, 94)"></IconLockCheck>
                     ) : (
-                        <IconLockX color="#242424"></IconLockX>
+                        <IconLockX color="#5d5761"></IconLockX>
                     )}
                 </div>
                 {/* {passErrorMessage != 0 ? (

@@ -35,7 +35,7 @@ export default function UserProfile({ client_name,  client_mail, online}: UserPr
 
     return (
         <div className="w-full p-3 relative">
-            <div className="flex gap-3 items-center justify-between w-full p-2 rounded-lg hover:bg-gray">
+            <div className="flex gap-3 items-center justify-between w-full p-2 rounded-lg bg-dark hover:bg-gray">
                 <div className={`rounded-full w-16 bg-gray border-2  overflow-hidden ${online ? "border-green-400" : "border-blue"}`}>
                     <Image width={200} height={200} alt="user-profile" src={`/gif/Female Avatar.gif`}></Image>
                 </div>
