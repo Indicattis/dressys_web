@@ -7,6 +7,7 @@ Bem-vindo ao nosso sistema de gerenciamento de salão de beleza! Este aplicativo
 ## Funcionalidades
 * Para Administradores de Salão
 > Gerenciamento de Agenda: Agende e organize compromissos com facilidade.
+
 > Cadastro de Serviços: Adicione, edite e remova serviços oferecidos pelo salão.
 > Gerenciamento de Funcionários: Mantenha um registro dos funcionários e suas especialidades.
 > Relatórios e Estatísticas: Acesse relatórios detalhados sobre o desempenho do salão.
