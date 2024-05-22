@@ -1,6 +1,6 @@
 
 # Sistema de Gerenciamento de Salão de Beleza
-Bem-vindo ao nosso sistema de gerenciamento de salão de beleza! Este aplicativo web foi projetado para facilitar a administração do seu salão de beleza, bem como proporcionar aos clientes uma forma fácil e conveniente de encontrar estabelecimentos próximos e agendar serviços online.
+Bem-vindo! Este aplicativo web foi projetado para facilitar a administração do seu salão de beleza, bem como proporcionar aos clientes uma forma fácil e conveniente de encontrar estabelecimentos próximos e agendar serviços online. A ideia se baseia em uma interface amigável onde é possível encontrar, experimentar e avaliar estabelecimentos de maneira ágil e simples. As tecnologias utilizadas permitem que o cliente possa visualizar um estabelecimento próximo com um clique e agendar um horário com base nos serviços prestados pelo mesmo e o tempo de atendimento, tudo de maneira organizada e segura.
 
 - [HOMOLOGAÇÃO](https://dressys-web.vercel.app) - Interface homologada
 
@@ -9,15 +9,22 @@ Bem-vindo ao nosso sistema de gerenciamento de salão de beleza! Este aplicativo
 > Gerenciamento de Agenda: Agende e organize compromissos com facilidade.
 
 > Cadastro de Serviços: Adicione, edite e remova serviços oferecidos pelo salão.
+
 > Gerenciamento de Funcionários: Mantenha um registro dos funcionários e suas especialidades.
+
 > Relatórios e Estatísticas: Acesse relatórios detalhados sobre o desempenho do salão.
+
 > Notificações: Envie lembretes e notificações para clientes e funcionários.
 
 * Para Clientes
 >Catálogo de Estabelecimentos: Encontre salões de beleza próximos à sua localização.
+
 >Visualização de Serviços: Veja a lista de serviços oferecidos por cada salão.
+
 >Agendamento Online: Agende seus serviços favoritos diretamente pelo aplicativo.
+
 >Avaliações e Comentários: Leia avaliações e deixe feedback sobre os serviços recebidos.
+
 >Histórico de Agendamentos: Consulte seu histórico de agendamentos e repita serviços com facilidade.
 
 * Tecnologias Utilizadas
