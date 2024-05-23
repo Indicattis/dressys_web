@@ -69,9 +69,9 @@ function OptionCase({ position, description, legend}: OptionCaseProps) {
                     exit={{ opacity: 0 }}
                     transition={{ delay: 0.1 }}
                     className={`absolute font-norms-thin z-20 bottom-3 left-0 transition-all text-blue text-lg p-5 flex gap-3 `}>
-                        {legend && legend.map((itam) => {
+                        {legend && legend.map((item, index) => {
                             return (
-                                <DefaultButton variant="darkPink" wide="md">{itam}</DefaultButton>
+                                <DefaultButton key={index} variant="darkPink" wide="md">{item}</DefaultButton>
                             )
                         })}
                     </motion.div>
